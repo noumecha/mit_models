@@ -18,13 +18,13 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *   library = "mit_models/mit_models_contact_section",
  *   default_region = "contatct_title",
  *   regions = {
- *     "contatct_title" = {
+ *     "contact_title" = {
  *       "label" = @Translation("contatct_title"),
  *     },
- *     "contatct_description" = {
+ *     "contact_description" = {
  *       "label" = @Translation("contatct_description"),
  *     },
- *     "contatct_list" = {
+ *     "contact_list" = {
  *       "label" = @Translation("contatct_list"),
  *     },
  *     "contact_image" = {
