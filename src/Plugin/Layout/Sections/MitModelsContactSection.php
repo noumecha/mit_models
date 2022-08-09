@@ -22,16 +22,16 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *       "label" = @Translation("contatct_title"),
  *     },
  *     "contatct_description" = {
- *       "label" = @Translation("contatct_description")
+ *       "label" = @Translation("contatct_description"),
  *     },
  *     "contatct_list" = {
- *       "label" = @Translation("contatct_list")
+ *       "label" = @Translation("contatct_list"),
  *     },
  *     "contact_image" = {
- *       "label" = @Translation("contatct_image")
+ *       "label" = @Translation("contatct_image"),
  *     },
  *     "contact_link" = {
- *       "label" = @Translation("contact_link")
+ *       "label" = @Translation("contact_link"),
  *     }
  *   }
  * )
