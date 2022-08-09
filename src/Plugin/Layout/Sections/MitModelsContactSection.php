@@ -12,7 +12,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  * @Layout(
  *   id = "mit_models_contact_section",
  *   label = @Translation(" Mit_Models : Contact "),
- *   category = @Translation("mit_models),
+ *   category = @Translation("mit_models"),
  *   path = "layouts/sections",
  *   template = "mit_models_contact_section",
  *   library = "mit_models/mit_models_contact_section",
