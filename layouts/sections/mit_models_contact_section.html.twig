@@ -1,0 +1,39 @@
+{% if conctent %}
+<section {{ attributes.addClass('contact-us-section-handler') }}>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-contact-block">
+                    {% if content.contact_title %}
+                    <div {{ region_attributes.contact_title.addClass('title') }}>
+                        {{ content.contact_title }}
+                    </div>
+                    {% endif %}
+                    {% if content.contact_description %}
+                    <div {{ region_attributes.contact_description.addClass('short-description')}} >
+                        {{ content.contact_description }}
+                    </div>
+                    {% endif %}
+                    {% if content.contact_list %}
+                    <ul {{ region_attributes.contact_list.addClass('list-handler') }} >
+                        {{ content.contact_list }}
+                    </ul>
+                    {% endif %}
+                    <div class="contact-btn">
+                    {% if content.contact_link %}
+                        {{ content.contact_link }}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+                <div class="col-lg-6 ">
+                    {% if content.contact_image %}
+                    <div {{ region_attributes.contact_image.addClass('right-contact-block') }} >
+                        {{ content.contact_image }}
+                    </div>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</section>
+{% endif %}
