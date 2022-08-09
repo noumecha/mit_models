@@ -3,7 +3,7 @@
     "description": "new drupal module for a new site.",
     "type": "drupal-custom-module",
     "require": {
-        "stephane888/formatage_models": "^3.2"
+        "stephane888/formatage_models": "^3.2 | 3.1"
     },
     "license": "MIT",
     "authors": [
