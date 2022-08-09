@@ -1,4 +1,4 @@
-{% if conctent %}
+{% if content %}
 <section {{ attributes.addClass('contact-us-section-handler') }}>
     <div class="container">
         <div class="row">
@@ -26,13 +26,13 @@
                     </div>
                 </div>
             </div>
-                <div class="col-lg-6 ">
-                    {% if content.contact_image %}
-                    <div {{ region_attributes.contact_image.addClass('right-contact-block') }} >
-                        {{ content.contact_image }}
-                    </div>
-                    {% endif %}
+            <div class="col-lg-6 ">
+                {% if content.contact_image %}
+                <div {{ region_attributes.contact_image.addClass('right-contact-block') }} >
+                    {{ content.contact_image }}
                 </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 </section>
