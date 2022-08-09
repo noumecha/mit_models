@@ -2,8 +2,9 @@
     "name": "noumel/mit_models",
     "description": "new drupal module for a new site.",
     "type": "drupal-custom-module",
+    "minimum-stability": "dev",
     "require": {
-        "stephane888/formatage_models": "^3.2 | 3.1"
+        "stephane888/formatage_models": "dev-3.x | 3.1"
     },
     "license": "MIT",
     "authors": [
