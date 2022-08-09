@@ -32,7 +32,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *     },
  *     "contact_link" = {
  *       "label" = @Translation("contact_link"),
- *     }
+ *     },
  *   }
  * )
  */
