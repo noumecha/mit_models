@@ -8,7 +8,7 @@ mit_models:
   dependencies:
     - core/drupalSettings
     - mit_models/jquery-labelauty
-# Custom library for section
+# Customs libraries for sections
 mit_models_contact_section:
   js:
     js/mit_models_contact_section.js: {}
@@ -21,6 +21,14 @@ mit_models_title_section:
   css:
     theme:
       css/mit_models_title_section.css : {}
+
+# Customs libraries for teasers : 
+mit_models_service_teaser:
+  js:
+    js/mit_models_service_teaser.js: {}
+  css:
+    theme:
+      css/mit_models_service_teaser.css: {}
 
 # Third-party library (self hosted).
 jquery-labelauty:

@@ -1,0 +1,31 @@
+{% if content %}
+    <div {{ region_attribues.addClass('services-list') }}>
+        <div class="icon">
+            <span class="bg-icon bg-icon1">
+
+            </span>
+            {% if content.service_icon %}
+            <i {{ region_attributes.service_icon.addClass('icon-flat')}} >
+                {{ content.service_icon }}
+            </i>
+            {% endif %}
+        </div>
+        <div class="service-body">
+        {% if content.service_title %}
+            <div {{ region_attributes.service_title.addClass('service-title') }} >
+                {{ content.service_title }}
+            </div>
+        {% endif %}
+        {% if content.service_description %}
+            <div {{ retion_attributes.service_description.addClass('single-service-description')}} >
+                {{ content.service_description }}
+            </div>
+        {% endif %}
+            <div class="more-link">
+            {% if content.service_link %}
+                {% content.service_link %}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
