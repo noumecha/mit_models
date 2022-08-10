@@ -1,0 +1,18 @@
+{% if content %}
+<section {{ attributes.addClass('mitor-section-title') }}>
+    <div class="container">
+        <div class="section-header">
+            {% if content.title %}
+            <h3 {{ region_attributes.title.addClass('section-title') }}>
+                {{ content.title }}
+            </h3>
+            {% endif %}
+            {% if content.description %}
+            <p {{ region_attributes.description.addClass('section-desc') }}>
+                {{ content.description }}
+            </p>
+            {% endif %}
+        </div>
+    <div>
+</section>
+{% endif %}

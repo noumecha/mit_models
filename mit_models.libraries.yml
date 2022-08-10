@@ -15,6 +15,12 @@ mit_models_contact_section:
   css:
     theme:
       css/mit_models_contact_section.css: {}
+mit_models_title_section:
+  js:
+    js/mit_models_title_section.js: {}
+  css:
+    theme:
+      css/mit_models_title_section.css : {}
 
 # Third-party library (self hosted).
 jquery-labelauty:
