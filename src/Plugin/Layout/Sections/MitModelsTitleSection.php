@@ -71,13 +71,13 @@ class MitModelsTitleSection extends FormatageModelsSection {
                 'fields' => [
                     'title' => [
                         'text_html' => [
-                            'title' => 'Titre',
+                            'label' => 'Titre',
                             'value' => 'What Services We Offers'
                         ]
                     ],
                     'description' => [
                         'text_html' => [
-                            'title' => 'Description',
+                            'label' => 'Description',
                             'value' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti vero quaerat, eum voluptas
                             odio asperiores unde molestiae dolorem enim, sunt facere soluta!'
                         ]

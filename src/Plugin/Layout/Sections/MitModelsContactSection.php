@@ -74,7 +74,7 @@ class MitModelsContactSection extends FormatageModelsSection {
                 ],
                 'fields' => [
                     'contact_title' => [
-                        'text' => [
+                        'text_html' => [
                             'label' => 'Titre',
                             'value' => ' Best Digital Agency Since 1998 Over the internet '
                         ]
