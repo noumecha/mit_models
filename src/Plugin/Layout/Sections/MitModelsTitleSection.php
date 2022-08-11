@@ -58,7 +58,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
      * {@inheritdoc}
      * 
      */
-    public function defaultConfiguration() {
+    function defaultConfiguration() {
         return parent::defaultConfiguration() + [
             'load_library' => true,
             'region_tag_title' => 'h1',
