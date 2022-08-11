@@ -2,6 +2,7 @@ name: mit_models
 type: module
 description: Provides additional functionality for the site.
 package: Custom
+core: 8.x
 core_version_requirement: ^9 || ^10
 dependencies:
   - formatage_models
