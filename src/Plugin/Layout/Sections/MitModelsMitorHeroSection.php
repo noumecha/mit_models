@@ -11,7 +11,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *
  * @Layout(
  *   id = "mit_models_mitor_hero_section",
- *   label = @Translation(" Mit_Models : Title "),
+ *   label = @Translation(" Mit_Models : Hero Section "),
  *   category = @Translation("mit_models"),
  *   path = "layouts/sections",
  *   template = "mit_models_mitor_hero_section",
