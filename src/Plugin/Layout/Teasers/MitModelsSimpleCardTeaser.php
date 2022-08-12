@@ -11,7 +11,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *
  * @Layout(
  *   id = "mit_models_simple_card_teaser",
- *   label = @Translation(" Mit_Models : Hero Teaser "),
+ *   label = @Translation(" Mit_Models : Simple Card "),
  *   category = @Translation("mit_models"),
  *   path = "layouts/teasers",
  *   template = "mit_models_simple_card_teaser",
