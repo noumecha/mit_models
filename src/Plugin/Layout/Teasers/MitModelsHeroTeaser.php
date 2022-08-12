@@ -35,84 +35,84 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  */
 class MitModelsHeroTeaser extends FormatageModelsTeasers {
   
-  /**
-   *
-   * {@inheritdoc}
-   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-   */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-    // TODO Auto-generated method stub
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-    $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/teasers/mit_models_hero_teaser.png");
-  }
+    /**
+    *
+    * {@inheritdoc}
+    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+    */
+    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+        // TODO Auto-generated method stub
+        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+        $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/teasers/mit_models_hero_teaser.png");
+    }
   
-  /**
-   *
-   * {@inheritdoc}
-   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-   */
-  public function build(array $regions) {
-    // TODO Auto-generated method stub
-    $build = parent::build($regions);
-    FormatageModelsThemes::formatSettingValues($build);
-    return $build;
-  }
-  /**
-   * 
-   * {@inheritdoc}
-   * 
-   */
-  public function defaultConfiguration() {
-    return parent::defaultConfiguration() + [
-        'load_library' => true,
-        "derivate" => [
-            'value' => 'right',
-            'options' => [
-              'mitor-card--right' => 'right',
-              'mitor-card--reverse' => 'reverse',
-            ]
-        ],
-        'info' => [
-            'builder_form' => 'true',
-            'infor' => [
-                'title' => 'Formulaire de contenu',
-                'loader' => 'static'
+    /**
+    *
+    * {@inheritdoc}
+    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+    */
+    public function build(array $regions) {
+        // TODO Auto-generated method stub
+        $build = parent::build($regions);
+        FormatageModelsThemes::formatSettingValues($build);
+        return $build;
+    }
+    /**
+    * 
+    * {@inheritdoc}
+    * 
+    */
+    function defaultConfiguration() {
+        return [
+            'load_library' => true,
+            "derivate" => [
+                'value' => 'right',
+                'options' => [
+                    'mitor-card--right' => 'right',
+                    'mitor-card--reverse' => 'reverse'
+                ]
             ],
-            'fields' => [
-                'teaser_title' => [
-                    'text_html' => [
-                        'title' => 'Titre teaser',
-                        'value' => 'Marketing machuntruc'
-                    ]
+            'infos' => [
+                'builder-form' => true,
+                'info' => [
+                    'title' => 'Formulaire de contenu',
+                    'loader' => 'static'
                 ],
-                'teaser_description' => [
-                    'text_html' => [
-                        'title' => 'teaser description',
-                        'value' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni temporibus saepe consectetur
-                        ullam atque molestias! obcaecati'
-                    ]
-                ],
-                'teaser_image' => [
-                    'text_html' => [
-                        'title' => 'teaser Image',
-                        'value' => '<a href="#">
-                                        <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-1/banner.png" alt="">
-                                    </a>'
-                    ]
-                ],
-                'teaser_link' => [
-                    'url' => [
-                        'title' =>  'Link',
-                        'value' =>  [
-                            'text' => 'Contact-Us',
-                            'link' => '#',
-                            'class' => 'mitor-btn'
+                'fields' => [
+                    'teaser_title' => [
+                        'text_html' => [
+                            'title' => 'Titre teaser',
+                            'value' => 'Marketing machuntruc'
                         ]
-                    ]
+                    ],
+                    'teaser_description' => [
+                        'text_html' => [
+                            'title' => 'teaser description',
+                            'value' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni temporibus saepe consectetur
+                            ullam atque molestias! obcaecati'
+                        ]
+                    ],
+                    'teaser_image' => [
+                        'text_html' => [
+                            'title' => 'teaser Image',
+                            'value' => '<a href="#">
+                                            <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-1/banner.png" alt="">
+                                        </a>'
+                        ]
+                    ],
+                    'teaser_link' => [
+                        'url' => [
+                            'title' =>  'Link',
+                            'value' =>  [
+                                'text' => 'Contact-Us',
+                                'link' => '#',
+                                'class' => 'mitor-btn'
+                            ]
+                        ]
+                    ]   
                 ]
             ]
-        ]
-    ];
-  }
+        ] + parent::defaultConfiguration();
+    }
   
 }

@@ -66,8 +66,8 @@ class MitModelsServiceTeaser extends FormatageModelsTeasers {
     return parent::defaultConfiguration() + [
         'load_library' => true,
         'info' => [
-            'builder_form' => 'true',
-            'infor' => [
+            'builder-form' => true,
+            'info' => [
                 'title' => 'Formulaire de contenu',
                 'loader' => 'static'
             ],
