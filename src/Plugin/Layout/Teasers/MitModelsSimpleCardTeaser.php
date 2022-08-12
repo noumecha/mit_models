@@ -43,8 +43,8 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *       "label" = @Translation("card_user_role"),
  *     },
  *     "card_user_date" = {
- *       "label" = @Translation("card_user_date),
- *     }
+ *       "label" = @Translation("card_user_date"),
+ *     },
  *   }
  * )
  */
