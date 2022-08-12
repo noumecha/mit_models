@@ -59,32 +59,31 @@ class MitModelsTitleSection extends FormatageModelsSection {
      * 
      */
     function defaultConfiguration() {
-        return parent::defaultConfiguration() + [
-            'load_library' => true,
+        return [
+            'load_libray' => true,
             'region_tag_title' => 'h1',
             'infos' => [
-                'builder_form' => true,
+                'builder-form' => true,
                 'info' => [
-                    'title' => 'Formulaire de contenu',
-                    'loader' => 'static',
+                    'title' => 'Texte information',
+                    'loader' => 'static'
                 ],
                 'fields' => [
                     'title' => [
                         'text_html' => [
                             'label' => 'Titre',
-                            'value' => 'What Services We Offers'
+                            'value' => ' Best Digital Agency Since 1998 Over the internet '
                         ]
                     ],
                     'description' => [
                         'text_html' => [
-                            'label' => 'Description',
-                            'value' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti vero quaerat, eum voluptas
-                            odio asperiores unde molestiae dolorem enim, sunt facere soluta!'
+                            'label' => ' Descritpion ',
+                            'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
                         ]
-                    ]
+                    ],
                 ]
             ]
-        ];
+        ] + parent::defaultConfiguration();
     }
 
 }
