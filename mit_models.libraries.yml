@@ -35,6 +35,12 @@ mit_models_service_teaser:
   css:
     theme:
       css/mit_models_service_teaser.css: {}
+mit_models_hero_teaser:
+  js:
+    js/mit_models_hero_teaser.js: {}
+  css:
+    theme:
+      css/mit_models_hero_teaser.css: {}
 
 # Third-party library (self hosted).
 jquery-labelauty:

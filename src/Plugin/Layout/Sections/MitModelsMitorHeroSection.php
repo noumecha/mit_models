@@ -16,19 +16,10 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *   path = "layouts/sections",
  *   template = "mit_models_mitor_hero_section",
  *   library = "mit_models/mit_models_mitor_hero_section",
- *   default_region = "m_hero_title",
+ *   default_region = "m_hero_content",
  *   regions = {
- *     "m_hero_title" = {
- *       "label" = @Translation("m_hero_title"),
- *     },
- *     "m_hero_description" = {
- *       "label" = @Translation("m_hero_description"),
- *     },
- *     "m_hero_btn" = {
- *       "label" = @Translation("m_hero_btn"),
- *     },
- *     "m_hero_image" = {
- *       "label" = @Translation("m_hero_image"),
+ *     "m_hero_content" = {
+ *       "label" = @Translation("m_hero_content"),
  *     }
  *   }
  * )
@@ -68,13 +59,6 @@ class MitModelsMitorHeroSection extends FormatageModelsSection {
         return [
             'load_libray' => true,
             'region_tag_title' => 'h1',
-            "derivate" => [
-                'value' => 'right',
-                'options' => [
-                  'mitor-card--right' => 'right',
-                  'mitor-card--reverse' => 'reverse',
-                ]
-              ],
             'infos' => [
                 'builder-form' => true,
                 'info' => [
@@ -82,35 +66,10 @@ class MitModelsMitorHeroSection extends FormatageModelsSection {
                     'loader' => 'static'
                 ],
                 'fields' => [
-                    'm_hero_title' => [
+                    'm_hero_content' => [
                         'text_html' => [
-                            'label' => 'Titre',
+                            'label' => 'Contenu',
                             'value' => 'We Ensure the Success of Your Products and Business'
-                        ]
-                    ],
-                    'm_hero_description' => [
-                        'text_html' => [
-                            'label' => ' Descritpion ',
-                            'value' => ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                        et dolore magna aliqua. Quis ipsum suspe ndisse ultrices gravida. Risus commodo viverra maecenas '
-                        ]
-                    ],
-                    'm_hero_image' => [
-                        'text_html' => [
-                            'label' => ' Image ',
-                            'value' => ' <a href="#">
-                                            <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-1/banner.png" alt="">
-                                        </a>'
-                        ]
-                    ],
-                    'm_hero_btn' => [
-                        'url' => [
-                            'label' => ' Button ',
-                            'value' => [
-                                'link' => '#',
-                                'text' => 'Contact Us',
-                                'class' => 'mitor-btn',
-                            ]
                         ]
                     ]
                 ]
