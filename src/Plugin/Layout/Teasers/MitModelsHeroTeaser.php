@@ -21,6 +21,9 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     "teaser_title" = {
  *       "label" = @Translation("teaser_title"),
  *     },
+ *     "teaser_small_title" = {
+ *       "label" = @Translation("teaser_small_title"),
+ *      },
  *     "teaser_description" = {
  *       "label" = @Translation("teaser_description")
  *     },
@@ -81,20 +84,26 @@ class MitModelsHeroTeaser extends FormatageModelsTeasers {
                 'fields' => [
                     'teaser_title' => [
                         'text_html' => [
-                            'title' => 'Titre teaser',
+                            'label' => 'Titre teaser',
                             'value' => 'Marketing machuntruc'
+                        ]
+                    ],
+                    'teaser_small_title' => [
+                        'text_html' => [
+                            'label' => 'Small titre teaser',
+                            'value' => 'Our Values and Goals'
                         ]
                     ],
                     'teaser_description' => [
                         'text_html' => [
-                            'title' => 'teaser description',
+                            'label' => 'teaser description',
                             'value' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni temporibus saepe consectetur
                             ullam atque molestias! obcaecati'
                         ]
                     ],
                     'teaser_image' => [
                         'text_html' => [
-                            'title' => 'teaser Image',
+                            'label' => 'teaser Image',
                             'value' => '<a href="#">
                                             <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-1/banner.png" alt="">
                                         </a>'
@@ -102,7 +111,7 @@ class MitModelsHeroTeaser extends FormatageModelsTeasers {
                     ],
                     'teaser_link' => [
                         'url' => [
-                            'title' =>  'Link',
+                            'label' =>  'Link',
                             'value' =>  [
                                 'text' => 'Contact-Us',
                                 'link' => '#',

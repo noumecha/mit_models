@@ -16,6 +16,11 @@
             </div>
         </div>
         <div class="mitor-card__body col-lg-6  ">
+        {% if content.teaser_small_title %}
+            <h6 {{ region_attributes.teaser_small_title.addClass('mc-small')}} >
+                {{ content.teaser_small_title }}
+            </h6>
+        {% endif %}
         {% if content.teaser_title %}
             <h3 {{ region_attributes.teaser_title.addClass('mc-title')}} >
                 {{ content.teaser_title }}
