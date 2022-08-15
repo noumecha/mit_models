@@ -18,9 +18,9 @@
             </h6>
             {% endif %}
             {% if content.princing_price %}
-            <div {{ region_attributes.princing_price.addClass('price')}} >
-                {{ content.princing_price.text }}
-            </div>
+            <p {{ region_attributes.princing_price.addClass('price')}} >
+                {{ content.princing_price }}
+            </p>
             {% endif %}
         </div>
     </div>
@@ -31,13 +31,14 @@
     {% endif %}
     <div class="card-middle">
         {% if content.pricing_elements %}
-            {% for item in content.pricing_elements
+            <ul {{ region_attributes.pricing_elements.addClass('elements') }} >
+                {{ content.pricing_elements }}  
+            </ul>
+            {#% for item in content.pricing_elements
                 |array_elements(region_attributes.pricing_elements.addClass('elements')) 
             %}
-                {{ item }} 
-                {# default to remove #}
-                {{ content.pricing_elements }}
-            {% endfor %}
+                {{ item }}
+            {% endfor %#}          
 	    {% endif %}
     </div>
     <div class="card-bottom">
@@ -46,9 +47,9 @@
                 {{ content.princing_bottom_link }}
             {% endif %}
             {% if content.pricing_bottom_svg %}
-            <div {{ region_attributs.pricing_bottom_svg.addClass('svg') }} >
+            <i {{ region_attributs.pricing_bottom_svg.addClass('svg') }} >
                 {{ content.pricing_bottom_svg }}
-            </div>
+            </i>
             {% endif %}
         </div>
     </div>
