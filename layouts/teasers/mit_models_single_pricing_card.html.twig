@@ -18,9 +18,9 @@
             </h6>
             {% endif %}
             {% if content.princing_price %}
-            <p {{ region_attributes.princing_price.addClass('price')}} >
+            <div {{ region_attributes.princing_price.addClass('price')}} >
                 {{ content.princing_price.text }}
-            </p>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -35,6 +35,8 @@
                 |array_elements(region_attributes.pricing_elements.addClass('elements')) 
             %}
                 {{ item }} 
+                {# default to remove #}
+                {{ content.pricing_elements }}
             {% endfor %}
 	    {% endif %}
     </div>
