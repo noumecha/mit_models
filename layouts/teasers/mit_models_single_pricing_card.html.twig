@@ -1,0 +1,54 @@
+{% if content %}
+<div {{ attributes.addClass('single-pricing-card') }} >
+    <div class="card-top">
+        {% if content.big_svg %}
+        <div {{ region_attributes.big_svg.addClass('back-svg')}}>
+            {{ content.big_svg }}
+        </div>
+        {% endif %}
+        <div class="head">
+            {% if content.small_svg %}
+            <div {{ region_attributes.small_svg.addClass('head-svg') }} >
+                {{ content.small_svg }}
+            </div>
+            {% endif %}
+            {% if content.pricing_title %}
+            <h6 {{ region_attributes.pricing_title.addClass('title')}} >
+                {{ content.pricing_title }}
+            </h6>
+            {% endif %}
+            {% if content.princing_price %}
+            <p {{ region_attributes.princing_price.addClass('price')}} >
+                {{ content.princing_price.text }}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+    {% if content.pricing_counter %}
+    <div {{ region_attributes.pricing_counter.addClass('counter-handler')}}>
+        {{ content.pricing_counter }}
+    </div>
+    {% endif %}
+    <div class="card-middle">
+        {% if content.pricing_elements %}
+            {% for item in content.pricing_elements
+                |array_elements(region_attributes.pricing_elements.addClass('elements')) 
+            %}
+                {{ item }} 
+            {% endfor %}
+	    {% endif %}
+    </div>
+    <div class="card-bottom">
+        <div class="choose">
+            {% if content.princing_bottom_link %}
+                {{ content.princing_bottom_link }}
+            {% endif %}
+            {% if content.pricing_bottom_svg %}
+            <div {{ region_attributs.pricing_bottom_svg.addClass('svg') }} >
+                {{ content.pricing_bottom_svg }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -47,6 +47,12 @@ mit_models_simple_card_teaser:
   css:
     theme:
       css/mit_models_simple_card_teaser.css: {}
+mit_models_single_pricing_card:
+  js:
+    js/mit_models_single_pricing_card.js: {}
+  css:
+    theme:
+      css/mit_models_single_pricing_card.css: {}
 
 # Third-party library (self hosted).
 jquery-labelauty:
