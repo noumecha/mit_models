@@ -27,7 +27,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *   }
  * )
  */
-class MitModelsAchievementsTeaser extends FormatageModelsTeasers {
+class MitModelsAchievmentsTeaser extends FormatageModelsTeasers {
   
     /**
     *
