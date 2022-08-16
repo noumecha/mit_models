@@ -24,6 +24,9 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *     "description" = {
  *       "label" = @Translation("description"),
  *     },
+ *     "title_section_btn" = {
+ *      "label" = @Translation("title_section_btn),
+ *     },
  *   }
  * )
  */
@@ -85,6 +88,16 @@ class MitModelsTitleSection extends FormatageModelsSection {
                         'text_html' => [
                             'label' => ' Descritpion ',
                             'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
+                        ]
+                    ],
+                    'title_section_btn' => [
+                        'url' => [
+                            'label' => 'LIEN',
+                            'value' => [
+                                'text' => 'Contact us',
+                                'link' => '#',
+                                'class' => 'mitor-btn'
+                            ]
                         ]
                     ]
                 ]
