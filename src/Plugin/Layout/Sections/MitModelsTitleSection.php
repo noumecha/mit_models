@@ -61,6 +61,12 @@ class MitModelsTitleSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
+            'derivate' => [
+                'value' => 'select',
+                'options' => [
+                    'mitor-section-title--bg' => 'before-bg'
+                ]
+            ],
             'region_tag_title' => 'h1',
             'infos' => [
                 'builder-form' => true,
@@ -80,7 +86,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
                             'label' => ' Descritpion ',
                             'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
                         ]
-                    ],
+                    ]
                 ]
             ]
         ] + parent::defaultConfiguration();
