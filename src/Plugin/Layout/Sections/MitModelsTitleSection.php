@@ -25,7 +25,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *       "label" = @Translation("description"),
  *     },
  *     "title_section_btn" = {
- *      "label" = @Translation("title_section_btn),
+ *      "label" = @Translation("title_section_btn"),
  *     },
  *   }
  * )
