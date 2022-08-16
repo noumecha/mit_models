@@ -21,8 +21,8 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     "teaser_title" = {
  *       "label" = @Translation("teaser_title"),
  *     },
- *     "teaser_small_title" = {
- *       "label" = @Translation("teaser_small_title"),
+ *     "teaser_svg" = {
+ *       "label" = @Translation("teaser_svg"),
  *      },
  *     "teaser_description" = {
  *       "label" = @Translation("teaser_description")
@@ -69,10 +69,9 @@ class MitModelsHeroTeaser extends FormatageModelsTeasers {
         return [
             'load_library' => true,
             "derivate" => [
-                'value' => 'right',
+                'value' => 'default',
                 'options' => [
-                    'mitor-card--right' => 'right',
-                    'mitor-card--reverse' => 'reverse'
+                    'mitor-hero--un' => 'un'
                 ]
             ],
             'infos' => [
@@ -88,10 +87,12 @@ class MitModelsHeroTeaser extends FormatageModelsTeasers {
                             'value' => 'Marketing machuntruc'
                         ]
                     ],
-                    'teaser_small_title' => [
+                    'teaser_svg' => [
                         'text_html' => [
                             'label' => 'Small titre teaser',
-                            'value' => 'Our Values and Goals'
+                            'value' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                            <polygon fill="white" points="0,100 100,0 100,100"></polygon>
+                                        </svg>'
                         ]
                     ],
                     'teaser_description' => [
