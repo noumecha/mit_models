@@ -83,7 +83,11 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
             "derivate" => [
                 'value' => '',
                 'options' => [
-                    'simple-card--no-img' => 'no-image(only with icon)',
+                    'simple-card--user-info' => 'user-info',
+                    'simple-card--icon' => 'icon',
+                    'simple-card--icon-bg' => 'icon-bg',
+                    'simple-card--icon-left' => 'icon-left',
+                    'simple-card--icon-no-effect' => 'icon-no-effect'
                 ]
             ],
             'infos' => [

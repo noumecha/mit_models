@@ -6,11 +6,6 @@
     </div>
     {% endif %}
     <div class="simple-card__body">
-        {% if content.card_icon %}
-        <div {{ region_attributes.card_icon.addClass('sc-icon')}} >
-            {{ content.card_icon }}
-        </div>
-        {% endif %}
         <div class="sc-user-info">
             {% if content.card_user_image %}
             <div {{ regions_attributes.card_user_image.addClass('img-bloc')}} >
@@ -37,6 +32,11 @@
                 </div>
             </div>
         </div>
+        {% if content.card_icon %}
+        <div {{ region_attributes.card_icon.addClass('sc-icon')}} >
+            {{ content.card_icon }}
+        </div>
+        {% endif %}
         {% if content.card_title %}
         <h4 {{ region_attributes.card_title.addClass('sc-title')}} >
             {{ content.card_title}}
