@@ -1,0 +1,50 @@
+{% if content %}
+<article {{ attributes.addClass('blog-card')}} >
+    <div class="blog-card-head">
+        <div class="blog-date">
+            {% if content.blog_card_date %}
+            <span {{ region_attributes.blog_card_date.addClass('date')}}>
+                {{ content.blog_card_date }}
+            </span>
+            {% endif %}
+            {% if content.blog_card_month %}
+            <span {{ region_attributes.blog_card_month.addClass('month')}}>
+                {{ content.blog_card_month }}
+            </span>
+            {% endif %}
+        </div>
+    </div>
+    {% if content.blog_card_image %}
+    <div {{ region_attributes.blog_card_image.addClass('img-handler')}} >
+        {{ content.blog_card_image }}
+    </div>
+    {% endif %}
+    <div class="blog-card-body">
+        <h5>
+            {% if content.blog_card_title %}
+                {{ content.blog_card_title }}
+            {% endif %}
+        </h5>
+        {% if content.blog_card_pdate %}
+        <div {{ region_attributes.blog_card_pdate.addClass('posted-date')}} >
+            {{ content.blog_card_pdate }}
+        </div>
+        {% endif %}
+        {% if content.blog_card_desc %}
+        <p {{ region_attributes.blog_card_desc.addClass('small-blog-content')}} >
+            {{ content.blog_card_desc }}
+        </p>
+        {% endif %}
+        <div class="lnk">
+            {% if content.blog_card_link %}
+                {{ content.blog_card_link }}
+            {% endif %}
+            {% if content.blog_card_svg %}
+            <i {{ region_attributes.blog_card_svg.addClass('svg') }}>
+                {{ content.blog_card_svg }}
+            </i>
+            {% endif %}
+        </div>
+    </div>
+</article>
+{% endif %}
