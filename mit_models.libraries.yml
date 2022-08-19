@@ -32,7 +32,13 @@ mit_models_card_section:
     js/mit_models_card_section.js: {}
   css:
     theme:
-      css/mit_models_card_section.css : {}
+      css/mit_models_card_section.css: {}
+mit_models_contact_hero:
+  js:
+    js/mit_models_contact_hero.js: {}
+  css:
+    theme:
+      css/mit_models_contact_hero.css: {}
 
 # Customs libraries for teasers : 
 mit_models_service_teaser:

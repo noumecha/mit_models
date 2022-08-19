@@ -1,0 +1,31 @@
+{% if content %}
+    {% if content.contact_hero_image.layout_builder_add_block %}
+        {{ content.contact_hero_image }}
+    {% endif %}
+    {% if content.contact_hero_image|layout_bg_img %}
+		{% set attributes=content.contact_hero_image|layout_bg_img %}
+	{% endif %}
+<section {{ attributes.addClass('mitor-contact-hero')}} >
+    <div class="container">
+        <div class="titles-handler">
+            {% if content.contact_hero_title %}
+            <h1 {{ content.contact_hero_title.addClass('title')}} >
+                {{ content.contact_hero_title }}
+            </h1>
+            {% endif %}
+            <div class="title-desc">
+                {% if content.contact_hero_proute %}
+                <span {{ region_attributes.contact_hero_proute.addClass('parent-route')}} >
+                    {{ content.contact_hero_proute }}
+                </span>
+                {% endif %}
+                {% if content.contact_hero_croute %}
+                <span {{ region_attributes.contact_hero_croute.addClass('currentroute')}} >
+                    {{ content.contact_hero_croute }}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
