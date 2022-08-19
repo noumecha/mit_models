@@ -77,6 +77,12 @@ class MitModelsBlogCardTeaser extends FormatageModelsTeasers {
     function defaultConfiguration() {
         return [
             'load_library' => true,
+            'derivate' => [
+                'value' => '',
+                'options' => [
+                    'blog-card--flex-minimize' => 'minimize',
+                ]
+            ],
             'infos' => [
                 'builder-form' => true,
                 'info' => [
