@@ -1,5 +1,5 @@
 {% if content %}
-    <div {{ region_attribues.addClass('services-list') }}>
+    <div {{ attributes.addClass('services-list') }}>
         <div class="icon">
             <span class="bg-icon bg-icon1">
 
@@ -17,7 +17,7 @@
             </div>
         {% endif %}
         {% if content.service_description %}
-            <div {{ retion_attributes.service_description.addClass('single-service-description')}} >
+            <div {{ region_attributes.service_description.addClass('single-service-description')}} >
                 {{ content.service_description }}
             </div>
         {% endif %}
