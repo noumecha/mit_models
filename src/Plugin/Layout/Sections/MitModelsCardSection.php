@@ -74,11 +74,14 @@ class MitModelsCardSection extends FormatageModelsSection {
                 'value' => 'select',
                 'options' => [
                     'mitor-card--right' => 'right',
-                    'mitor-card--reverse' => 'reverse',
+                    'mitor-card--right  mitor-card--reverse' => 'right-reverse',
                     'mitor-card--left' => 'left',
+                    'mitor-card--left  mitor-card--reverse' => 'left-reverse',
+                    'mitor-card--triangle-right  mitor-card--reverse' => 'triangle-right-reverse',
                     'mitor-card--triangle-right' => 'triangle-right',
+                    'mitor-card--right mitor-card--reverse mitor-card--video' => 'right-reverse-video',
                     'mitor-card--triangle' => 'triangle',
-                    'mitor-card--video' => 'video'
+                    'mitor-card--right mitor-card--video' => 'right-video'
                 ]
             ],
             'region_tag_title' => 'h1',
