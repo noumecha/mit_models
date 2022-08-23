@@ -70,7 +70,8 @@ class MitModelsTitleSection extends FormatageModelsSection {
             'derivate' => [
                 'value' => 'select',
                 'options' => [
-                    'mitor-section-title--bg' => 'before-bg'
+                    'mitor-section-title--bg' => 'before-bg',
+                    'bg-light' => 'bg-light'
                 ]
             ],
             'region_tag_title' => 'h1',
