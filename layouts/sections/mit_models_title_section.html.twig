@@ -16,7 +16,7 @@
     <div>
     <div class="row">
         {% if content.teaser_container %}
-    	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('col-12')) %}
+    	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('')) %}
     	        {{ item }} 
     	    {% endfor %}
 	    {% endif %}
