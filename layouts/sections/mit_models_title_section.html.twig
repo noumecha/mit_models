@@ -16,10 +16,15 @@
     <div>
     <div class="row">
         {% if content.teaser_container %}
+    	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('col-12')) %}
+    	        {{ item }} 
+    	    {% endfor %}
+	    {% endif %}
+        {#% if content.teaser_container %}
         <div {{ region_attributes.teaser_container.addClass('col-12')}}>
             {{ content.teaser_container }}
         </div>
-        {% endif %}
+        {% endif %#}
     </div> 
     <div class="d-flex justify-content-center">
     {% if content.title_section_btn %}
