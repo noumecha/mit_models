@@ -27,6 +27,9 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *     "title_section_btn" = {
  *      "label" = @Translation("title_section_btn"),
  *     },
+ *     "teaser_container" = {
+ *      "label" = @Translation("teaser_container"),
+ *     },
  *   }
  * )
  */
@@ -88,6 +91,60 @@ class MitModelsTitleSection extends FormatageModelsSection {
                         'text_html' => [
                             'label' => ' Descritpion ',
                             'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
+                        ]
+                    ],
+                    'teaser_container' => [
+                        'text_html' => [
+                            'label' => 'Section card Container',
+                            'value' => '<div class="mitor-card mitor-card--triangle-right  mitor-card--reverse  row">
+                                            <div class="mitor-card__img col-lg-6">
+                                                <div class="img-bloc">
+                                                    <a href="#">
+                                                        <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-1/product-2.jpg"
+                                                            alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="mitor-card__body col-lg-6 pt-3 pt-lg-0">
+                                                <h3 class="mc-title">
+                                                    We Ensure the Success of Your Products and Business</h3>
+                                                <div class="mc-description">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                                    labore
+                                                    et dolore magna aliqua. Quis ipsum suspe ndisse ultrices gravida. Risus commodo viverra
+                                                    maecenas
+                        
+                        
+                        
+                        
+                                                    ccumsanamet, consectetur adipiscing elit, sed do eiusmod tempor incid idunt ut labore et
+                                                    dolore
+                                                    magna aliqua. Quis ipsum suspendisse ultrices Letraset sheets containing gravida.
+                                                    <ol>
+                                                        <li>
+                                                            <div>
+                                                                <h5>Cesi est un titre</h5>
+                                                                <p>There are many variations of passages of Lorem Ipsum available, but the
+                                                                    majority
+                                                                    have
+                                                                    suffered.</p>
+                                                            </div>
+                                                        </li>
+                                                        <li>mangoste
+                                                            There are many variations of passages of Lorem Ipsum available, but the majority
+                                                            have
+                                                            suffered. filbonar </li>
+                                                        <li>mangoste
+                                                            There are many variations of passages of Lorem Ipsum available, but the majority
+                                                            have
+                                                            suffered.nar </li>
+                        
+                        
+                                                    </ol>
+                                                </div>
+                                                <a href="#" class="mitor-btn  ">Contact us</a>
+                                            </div>
+                                        </div>'
                         ]
                     ],
                     'title_section_btn' => [
