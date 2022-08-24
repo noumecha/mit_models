@@ -1,0 +1,15 @@
+{% if content %}
+    {% if content.bg_image.layout_builder_add_block %}
+        {{ content.bg_image }}
+    {% endif %}
+    {% if content.bg_image|layout_bg_img %}
+		{% set attributes=content.bg_image|layout_bg_img %}
+	{% endif %}
+<div {{ attributes.addClass(['mitor-bloc-img','mitor-bloc-img--achievement'])}}>
+    {% if content %}
+    <div {{ region_attributes.bg_content.addClass(['container','my-5'])}} >
+        {{ content.bg_content }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
