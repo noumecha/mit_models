@@ -11,7 +11,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *
  * @Layout(
  *   id = "mit_models_blog_bg_section",
- *   label = @Translation(" Mit_Models : Card Section "),
+ *   label = @Translation(" Mit_Models : Blog Bg "),
  *   category = @Translation("mit_models"),
  *   path = "layouts/sections",
  *   template = "mit_models_blog_bg_section",
