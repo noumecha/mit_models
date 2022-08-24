@@ -73,15 +73,18 @@ class MitModelsCardSection extends FormatageModelsSection {
             'derivate' => [
                 'value' => 'select',
                 'options' => [
-                    'mitor-card--right' => 'right',
-                    'mitor-card--right  mitor-card--reverse' => 'right-reverse',
-                    'mitor-card--left' => 'left',
-                    'mitor-card--left  mitor-card--reverse' => 'left-reverse',
-                    'mitor-card--triangle-right  mitor-card--reverse' => 'triangle-right-reverse',
+                    'mitor-card--right' => 'rectangle-right-normal',
+                    'mitor-card--right  mitor-card--reverse' => 'rectangle-right-reverse',
+                    'mitor-card--left' => 'rectangle-left-normal',
+                    'mitor-card--left  mitor-card--reverse' => 'rectangle-left-reverse',
                     'mitor-card--triangle-right' => 'triangle-right',
+                    'mitor-card--triangle-right  mitor-card--reverse' => 'triangle-right-reverse',
+                    'mitor-card--triangle' => 'triangle-left',
+                    'mitor-card--triangle  mitor-card--reverse' => 'triangle-left-reverse',
+                    'mitor-card--right mitor-card--video' => 'right-video',
                     'mitor-card--right mitor-card--reverse mitor-card--video' => 'right-reverse-video',
-                    'mitor-card--triangle' => 'triangle',
-                    'mitor-card--right mitor-card--video' => 'right-video'
+                    'mitor-card--left mitor-card--video' => 'left-video',
+                    'mitor-card--left mitor-card--video mitor-card--reverse' => 'left-video-reverse'
                 ]
             ],
             'region_tag_title' => 'h1',
