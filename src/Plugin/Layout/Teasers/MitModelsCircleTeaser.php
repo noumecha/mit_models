@@ -27,7 +27,7 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *   }
  * )
  */
-class MitModelsBlogCardTeaser extends FormatageModelsTeasers {
+class MitModelsCircleTeaser extends FormatageModelsTeasers {
   
     /**
     *
