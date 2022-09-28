@@ -104,7 +104,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
                     'type_two' => [
                         'text_html' => [
                             'label' => 'Type Deux',
-                            'value' => 'Years'
+                            'value' => 'Yearly'
                         ]
                     ],
                     'description' => [
