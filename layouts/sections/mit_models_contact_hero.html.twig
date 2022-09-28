@@ -13,20 +13,15 @@
 						{{ content.contact_hero_title }}
 					</h1>
 				{% endif %}
-				<div class="title-desc">
+				<ul class="title-desc">
 					{% if content.contact_hero_proute %}
 						{% for item in content.contact_hero_proute|array_elements(region_attributes.teaser_container.addClass('parent-route')) %}
-							<div class="parent-route">
+							<li class="parent-route">
 								{{ item }}
-							</div>
+							</li>
 						{% endfor %}
 					{% endif %}
-					{% if content.contact_hero_croute %}
-						<li {{ region_attributes.contact_hero_croute.addClass('parent-route')}}>
-							{{ content.contact_hero_croute }}
-						</li>
-					{% endif %}
-				</div>
+				</ul>
 			</div>
 		</div>
 	</section>
