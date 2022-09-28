@@ -72,7 +72,6 @@ class MitModelsTitleSection extends FormatageModelsSection {
      */
     function defaultConfiguration() {
         return [
-            'region_css_teaser_container' => "col-md-6",
             'load_libray' => true,
             'derivate' => [
                 'value' => 'select',
