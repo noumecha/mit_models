@@ -1,0 +1,14 @@
+{% if content %}
+<div {{ attributes.addClass('download-circle')}}>
+    {% if content.circle_image_one %}
+    <div {{ region_attributes.circle_image_one.addClass('dc-img1')}}>
+        {{ content.circle_image_one }}
+    </div>
+    {% endif %}
+    {% if content.circle_image_two %}
+    <div {{ region_attributes.circle_image_two.addClass('dc-img2')}}>
+        {{ content.circle_image_two }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}

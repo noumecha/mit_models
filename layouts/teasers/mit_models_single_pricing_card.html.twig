@@ -18,9 +18,9 @@
             </h6>
             {% endif %}
             {% if content.princing_price %}
-            <p {{ region_attributes.princing_price.addClass('price')}} >
+            <div {{ region_attributes.princing_price.addClass('price')}} >
                 {{ content.princing_price }}
-            </p>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -47,9 +47,9 @@
                 {{ content.princing_bottom_link }}
             {% endif %}
             {% if content.pricing_bottom_svg %}
-            <i {{ region_attributes.pricing_bottom_svg.addClass('svg') }} >
+            <div {{ region_attributes.pricing_bottom_svg.addClass('svg') }} >
                 {{ content.pricing_bottom_svg }}
-            </i>
+            </div>
             {% endif %}
         </div>
     </div>
