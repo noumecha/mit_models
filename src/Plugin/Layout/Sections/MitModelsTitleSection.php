@@ -30,6 +30,12 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *     "teaser_container" = {
  *      "label" = @Translation("teaser_container"),
  *     },
+ *     "type_one" = {
+ *      "label" = @Translation("type_one"),
+ *     },
+ *     "type_two" = {
+ *      "label" = @Translation("type_two"),
+ *     },
  *   }
  * )
  */
@@ -87,6 +93,18 @@ class MitModelsTitleSection extends FormatageModelsSection {
                         'text_html' => [
                             'label' => 'Titre',
                             'value' => ' Best Digital Agency Since 1998 Over the internet '
+                        ]
+                    ],
+                    'type_one' => [
+                        'text_html' => [
+                            'label' => 'Type Un',
+                            'value' => 'Monthly'
+                        ]
+                    ],
+                    'type_two' => [
+                        'text_html' => [
+                            'label' => 'Type Deux',
+                            'value' => 'Years'
                         ]
                     ],
                     'description' => [
