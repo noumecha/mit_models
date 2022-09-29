@@ -1,0 +1,34 @@
+{% if content %}
+<div {{ attributes.addClass('mitor-overview')}}>
+    {% if content.overview_image %}
+        {{ content.overview_image }}
+    {% endif %}
+   <div class="mitor-hero-content">
+        <div class="container">
+            <div class="row">
+                <div class="mitor-card__body col-lg-10 ">
+                    {% if content.overview_small_title %}
+                    <h6 {{ region_attributes.overview_small_title.addClass('mc-small')}}>
+                        {{ content.overview_small_title }}
+                    </h6>
+                    {% endif %}
+                    {% if content.overview_large_title %}
+                    <h3 {{ region_attributes.overview_large_title.addClass('mc-title')}}>
+                        {{ content.overview_large_title }}
+                    </h3>
+                    {% endif %}
+                    <div class="d-flex justify-content-tart">
+                        <div class="mitor-play-btn">
+                            {% if content.overview_button_video %}
+                            <div {{ region_attributes.overview_button_video.addClass('mtb-play')}}>
+                                {{ content.overview_button_video }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
