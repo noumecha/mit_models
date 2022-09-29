@@ -36,9 +36,6 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     "card_link" = {
  *       "label" = @Translation("card_link"),
  *     },
- *     "card_image" = {
- *       "label" = @Translation("card_image"),
- *     },
  *     "card_user_image" = {
  *       "label" = @Translation("card_user_image"),
  *     },

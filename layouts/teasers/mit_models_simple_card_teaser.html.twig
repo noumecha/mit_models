@@ -1,7 +1,6 @@
 {% if content %}
 <div {{ attributes.addClass('simple-card')}} >
-    {% if content.card_image %}
-    <div {{ region_attributes.card_image.addClass('simple-card__img')}} >
+    <div class="simple-card__img">
         <div class="blog-date">
             {% if content.card_date %}
             <span {{ region_attributes.card_date.addClass('date')}}>
@@ -16,9 +15,12 @@
             </span>
             {% endif %}
         </div>
-        {{ content.card_image}}
+        {% if content.card_image %}
+        <div {{ region_attributes.card_image.addClass('')}}>
+            {{ content.card_image}}
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
     <div class="simple-card__body">
         <div class="sc-user-info">
             {% if content.card_user_image %}
