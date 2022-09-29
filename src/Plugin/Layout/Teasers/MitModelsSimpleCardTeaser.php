@@ -87,7 +87,7 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
                 'value' => '',
                 'options' => [
                     'simple-card--user-info' => 'user-info',
-                    'simple-card simple-card--dateshow' => 'dateshow',
+                    'simple-card--dateshow' => 'dateshow',
                     'simple-card--icon' => 'icon',
                     'simple-card--icon-bg' => 'icon-bg',
                     'simple-card--icon-left' => 'icon-left',
