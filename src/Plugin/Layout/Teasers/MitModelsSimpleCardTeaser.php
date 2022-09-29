@@ -21,6 +21,12 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     "card_image" = {
  *       "label" = @Translation("card_image"),
  *     },
+ *     "card_date" = {
+ *       "label" = @Translation("card_date"),
+ *     },
+ *     "card_month" = {
+ *       "label" = @Translation("card_month"),
+ *     },
  *     "card_description" = {
  *       "label" = @Translation("card_description"),
  *     },
@@ -84,6 +90,7 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
                 'value' => '',
                 'options' => [
                     'simple-card--user-info' => 'user-info',
+                    'simple-card simple-card--dateshow' => 'dateshow',
                     'simple-card--icon' => 'icon',
                     'simple-card--icon-bg' => 'icon-bg',
                     'simple-card--icon-left' => 'icon-left',
@@ -151,6 +158,18 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
                         'text_html' => [
                             'label' => 'Title Utilisateur',
                             'value' => 'sanjana parvin'
+                        ]
+                    ],
+                    'card_date' => [
+                        'text_html' => [
+                            'label' => 'Date',
+                            'value' => '29'
+                        ]
+                    ],
+                    'card_month' => [
+                        'text_html' => [
+                            'label' => 'Mois',
+                            'value' => 'June'
                         ]
                     ],
                     'card_user_role' => [
