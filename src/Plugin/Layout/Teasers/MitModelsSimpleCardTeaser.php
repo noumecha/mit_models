@@ -18,6 +18,9 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *   library = "mit_models/mit_models_simple_card_teaser",
  *   default_region = "card_title",
  *   regions = {
+ *     "card_title" = {
+ *       "label" = @Translation("card_title"),
+ *     },
  *     "card_image" = {
  *       "label" = @Translation("card_image"),
  *     },
