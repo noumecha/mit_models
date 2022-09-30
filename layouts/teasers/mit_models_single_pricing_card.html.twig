@@ -44,7 +44,7 @@
     <div class="card-bottom">
         <div class="choose">
             {% if content.princing_bottom_link %}
-                {% for item in content.princing_bottom_link|array_elements(region_attributes.princing_bottom_link.addClass('')) %}
+                {% for item in content.princing_bottom_link|array_elements(region_attributes.princing_bottom_link.addClass('link-text')) %}
                     {{ item }}
                 {% endfor %}
             {% endif %}
