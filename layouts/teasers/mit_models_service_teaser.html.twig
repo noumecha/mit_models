@@ -23,8 +23,13 @@
         {% endif %}
             <div class="more-link">
             {% if content.service_link %}
-                {{ content.service_link }}
-            {% endif %}
+                {% for item in content.service_link|array_elements(region_attributes.service_link.addClass('')) %}
+                    {{ item }} 
+                {% endfor %}
+	        {% endif %}
+            {#% if content.service_link %}
+                {{ content.service_link|layout_value }}
+            {% endif %#}
             </div>
         </div>
     </div>
