@@ -19,7 +19,9 @@
                 </div>
                 {% endif %}
                 {% if content.service_link %}
-                    {{ content.service_link }}
+                    {% for item in content.service_link|array_elements(region_attributes.service_link.addClass('')) %}
+                        {{ item }} 
+                    {% endfor %}
                 {% endif %}
             </div>
             <div class="col-lg-8 pl-md-5">

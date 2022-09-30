@@ -68,6 +68,7 @@ class MitModelsHeroTeaser extends FormatageModelsTeasers {
     function defaultConfiguration() {
         return [
             'load_library' => true,
+            'region_tag_teaser_title' => 'h3',
             "derivate" => [
                 'value' => 'default',
                 'options' => [

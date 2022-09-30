@@ -27,8 +27,13 @@
         </div>
         {% endif %}
         {% if content.mc_btn %}
-            {{ content.mc_btn }}
+            {% for item in content.mc_btn|array_elements(region_attributes.mc_btn.addClass('')) %}
+                {{ item }}
+            {% endfor %}
         {% endif %}
+        {#% if content.mc_btn %}
+            {{ content.mc_btn }}
+        {% endif %#}
         <div class="row">
             {% if content.listable_items %}
     	        {% for item in content.listable_items|array_elements(region_attributes.listable_items.addClass('')) %}

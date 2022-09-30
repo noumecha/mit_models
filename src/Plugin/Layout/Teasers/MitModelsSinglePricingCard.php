@@ -161,7 +161,7 @@ class MitModelsSinglePricingCard extends FormatageModelsTeasers {
                             'value' =>  [
                                 'text' => 'Choose Plan',
                                 'link' => '#',
-                                'class' => 'link-text'
+                                'class' => 'link'
                             ]
                         ]
                     ],

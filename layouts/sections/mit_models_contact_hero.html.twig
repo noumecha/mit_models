@@ -3,7 +3,7 @@
 		{{ content.contact_hero_image }}
 	{% endif %}
 	{% if content.contact_hero_image|layout_bg_img %}
-		{% set attributes=content.contact_hero_image|layout_bg_img %}
+		{% set attributes = attributes.merge(content.contact_hero_image|layout_bg_img) %}
 	{% endif %}
 	<section {{ attributes.addClass('mitor-contact-hero')}}>
 		<div class="container">
