@@ -1,6 +1,6 @@
 {% if content %}
-<header {{ attributes.addClass('mitor-hero')}}>
-    <div class="container">
+{#<header {{ attributes.addClass('mitor-hero')}}>
+    <div class="container">#}
         <div class="mitor-card mitor-card--right mitor-card--reverse row" >
             <div class="mitor-card__img col-lg-6">
                 {% if content.teaser_image %}
@@ -11,9 +11,9 @@
             </div>
             <div class="mitor-card__body col-lg-6  ">
                 {% if content.teaser_title %}
-                    <h3 {{ region_attributes.teaser_title.addClass('mc-title')}} >
-                        {{ content.teaser_title }}
-                    </h3>
+                    <{{settings.region_tag_teaser_title}} {{ region_attributes.teaser_title.addClass('mc-title')}} >
+                        {{ content.teaser_title|layout_value }}
+                    </{{settings.region_tag_teaser_title}}>
                 {% endif %}
                 {% if content.teaser_description %}
                     <div {{ region_attributes.teaser_description.addClass('mc-description')}} >
@@ -21,15 +21,20 @@
                     </div>
                 {% endif %}
                 {% if content.teaser_link %}
-                    {{ content.teaser_link }}
+                    {% for item in content.teaser_link|array_elements(region_attributes.teaser_link.addClass('')) %}
+                        {{ item }}
+                    {% endfor %}
                 {% endif %}
+                {#% if content.teaser_link %}
+                    {{ content.teaser_link }}
+                {% endif %#}
             </div>
         </div>
-    </div>
+    {#</div>#}
     {% if content.teaser_svg %}
     <div {{ region_attributes.teaser_svg.addClass('svg-1')}} >
         {{ content.teaser_svg }}
     </div>    
     {% endif %}
-</header>
+{#</header>#}
 {% endif %}

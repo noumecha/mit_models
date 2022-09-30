@@ -70,6 +70,7 @@ class MitModelsCardSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
+            //'region_tag_teaser_title' => 'h3',
             'derivate' => [
                 'value' => 'select',
                 'options' => [
