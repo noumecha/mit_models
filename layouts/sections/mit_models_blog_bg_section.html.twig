@@ -3,7 +3,7 @@
         {{ content.bg_image }}
     {% endif %}
     {% if content.bg_image|layout_bg_img %}
-		{% set attributes=content.bg_image|layout_bg_img %}
+        {% set attributes = attributes.merge(content.bg_image|layout_bg_img) %}
 	{% endif %}
 <div {{ attributes.addClass(['mitor-bloc-img','mitor-bloc-img--achievement'])}}>
     {% if content %}
