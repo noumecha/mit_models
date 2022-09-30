@@ -1,12 +1,10 @@
 {% if content %}
 <div {{ attributes.addClass('mitor-overview')}}>
-    {#% if content.overview_image %}
-        {{ content.overview_image }}
-    {% endif %#}
-    {% if content.overview_image %}
-    	{% for item in content.overview_image|array_elements(region_attributes.overview_image.addClass('')) %}
-    	    {{ item }} 
-    	{% endfor %}
+    {% if content.overview_image.layout_builder_add_block %}
+		{{ content.overview_image }}
+	{% endif %}
+	{% if content.overview_image|layout_bg_img %}
+		{% set attributes = attributes.merge(content.overview_image|layout_bg_img) %}
 	{% endif %}
    <div class="mitor-hero-content">
         <div class="container">
