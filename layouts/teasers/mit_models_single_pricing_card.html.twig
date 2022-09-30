@@ -48,10 +48,12 @@
                     {{ item }}
                 {% endfor %}
             {% endif %}
+            {#% if content.pricing_bottom_svg %#}
+            {#{ content.pricing_bottom_svg }#}
             {% if content.pricing_bottom_svg %}
-            <div {{ region_attributes.pricing_bottom_svg.addClass('svg') }} >
-                {{ content.pricing_bottom_svg }}
-            </div>
+                {% for item in content.pricing_bottom_svg|array_elements(region_attributes.pricing_bottom_svg.addClass('svg')) %}
+                    {{ item }}
+                {% endfor %}
             {% endif %}
         </div>
     </div>
