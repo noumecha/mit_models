@@ -34,12 +34,12 @@
                 {% endif %}
                 <div class="user-desc d-flex">
                     {% if content.card_user_role %}
-                    <span {{ region_attributes.card_user_role.addClass('user-role')}} >
+                    <span {{ region_attributes.card_user_role.addClass('user-role pr-2')}} >
                         {{ content.card_user_role }}
                     </span>
                     {% endif %} | 
                     {% if content.card_user_date %}
-                    <span {{ region_attributes.card_user_date.addClass('user-date')}} > 
+                    <span {{ region_attributes.card_user_date.addClass('user-date pl-2')}} > 
                         {{ content.card_user_date }}
                     </span>
                     {% endif %}
