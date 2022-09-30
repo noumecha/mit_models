@@ -23,8 +23,10 @@
         </div>
         <div class="d-flex justify-content-center">
         {% if content.title_section_btn %}
-            {{ content.title_section_btn }}
-        {% endif %}
+    	    {% for item in content.title_section_btn|array_elements(region_attributes.title_section_btn.addClass('')) %}
+    	        {{ item }} 
+    	    {% endfor %}
+	    {% endif %}
         </div>
     <div>
 </section>
