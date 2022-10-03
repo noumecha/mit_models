@@ -1,0 +1,19 @@
+{% if content %}
+<div {{ attributes.addClass('single-item')}}>
+    {% if content.card_img_image %}
+    <div {{ region_attributes.card_img_image.addClass('img-handler')}}>
+        {{ content.card_img_image }}
+    </div>
+    {% endif %}
+    <div class="content">
+        {% if content.card_img_link %}
+            {{ content.card_img_link }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" preserveAspectRatio="xMidYMid meet"
+                 viewBox="0 0 32 32">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="m22 6l8 10l-8 10m8-10H2" />
+            </svg>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
