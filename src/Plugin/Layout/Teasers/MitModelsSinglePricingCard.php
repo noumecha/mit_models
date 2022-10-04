@@ -30,9 +30,6 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     "princing_price" = {
  *       "label" = @Translation("princing_price")
  *     },
- *     "princing_bottom_price" = {
- *       "label" = @Translation("princing_bottom_price")
- *     },
  *     "pricing_elements" = {
  *       "label" = @Translation("pricing_elements")
  *     },
@@ -44,7 +41,10 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     },
  *     "pricing_counter" = {
  *       "label" = @Translation("pricing_counter"),
- *     }
+ *     },
+ *     "princing_duration" = {
+ *       "label" = @Translation("princing_duration"),
+ *     },
  *   }
  * )
  */
@@ -131,16 +131,16 @@ class MitModelsSinglePricingCard extends FormatageModelsTeasers {
                             'value' => ' professional'
                         ]
                     ],
+                    'princing_duration' => [
+                        'text_html' => [
+                            'label' => 'Duration',
+                            'value' => '/month'
+                        ],
+                    ],
                     'princing_price' => [
                         'text_html' => [
                             'label' => 'Price',
                             'value' => '$409'
-                        ]
-                    ],
-                    'princing_bottom_price' => [
-                        'text_html' => [
-                            'label' => 'Bottom Price',
-                            'value' => '$1000'
                         ]
                     ],
                     'pricing_elements' => [
