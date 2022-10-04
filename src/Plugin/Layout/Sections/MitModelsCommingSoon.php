@@ -73,13 +73,11 @@ class MitModelsCommingSoon extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            'region_tag_mc_title' => 'h3',
             'derivate' => [
                 'value' => 'select',
                 'options' => [
                 ]
             ],
-            'region_tag_title' => 'h1',
             'infos' => [
                 'builder-form' => true,
                 'info' => [
