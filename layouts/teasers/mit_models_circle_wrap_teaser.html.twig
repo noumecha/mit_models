@@ -1,0 +1,19 @@
+{% if content %}
+<div {{ attributes.addClass('circle-wrap') }}>
+    <div class="progress-circles">
+        {% if content.circle_wrap_svg %}
+            {{ content.circle_wrap_svg }}
+        {% endif %}
+        {% if content.circle_wrap_number %}
+        <div {{ region_attributes.circle_wrap_number.addClass('progress-value') }}>
+            {{ content.circle_wrap_number }}
+        </div>
+        {% endif %}
+    </div>
+    {% if content.circle_wrap_title %}
+    <div {{ region_attributes.circle_wrap_title.addClass('')}}>
+        {{ content.circle_wrap_title }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
