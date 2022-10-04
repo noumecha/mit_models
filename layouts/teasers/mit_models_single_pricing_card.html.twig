@@ -13,9 +13,9 @@
             </div>
             {% endif %}
             {% if content.pricing_title %}
-            <h6 {{ region_attributes.pricing_title.addClass('title')}} >
+            <{{settings.region_tag_pricing_title}} {{ region_attributes.pricing_title.addClass('title')}} >
                 {{ content.pricing_title }}
-            </h6>
+            </{{settings.region_tag_pricing_title}}>
             {% endif %}
             {% if content.princing_price %}
             <div {{ region_attributes.princing_price.addClass('price')}} >
@@ -42,6 +42,11 @@
 	    {% endif %}
     </div>
     <div class="card-bottom">
+        {% if content.princing_bottom_price %}
+        <div {{ region_attributes.princing_bottom_price.addClass('price')}}>
+            {{ content.princing_bottom_price }}
+        </div>
+        {% endif %}
         <div class="choose">
             {% if content.princing_bottom_link %}
                 {% for item in content.princing_bottom_link|array_elements(region_attributes.princing_bottom_link.addClass('link-text')) %}

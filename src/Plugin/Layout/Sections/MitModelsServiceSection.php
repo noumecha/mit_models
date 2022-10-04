@@ -70,7 +70,8 @@ class MitModelsServiceSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            'region_tag_title' => 'h1',
+            'region_tag_service_small_title' => 'h6',
+            'region_tag_service_title' => 'h3',
             'infos' => [
                 'builder-form' => true,
                 'info' => [

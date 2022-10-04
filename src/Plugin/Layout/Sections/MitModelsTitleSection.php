@@ -73,6 +73,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
+            'region_tag_title' => 'h2',
             'derivate' => [
                 'value' => 'select',
                 'options' => [

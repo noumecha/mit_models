@@ -70,11 +70,16 @@ class MitModelsCardSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            //'region_tag_teaser_title' => 'h3',
+            'region_tag_mc_title' => 'h3',
             'derivate' => [
                 'value' => 'select',
                 'options' => [
                     'mitor-card--right' => 'rectangle-right-normal',
+                    'mitor-card--carree' => 'carree',
+                    'mitor-card--reverse' => 'carree-reverse',
+                    'mitor-card--reverse   mitor-card--carree-right-up' => 'carree-reverse-right-up',
+                    'mitor-card--carree-up' => 'carree-up',
+                    'mitor-card--reverse mitor-card--carree-right' => 'carree-reverse-right',
                     'mitor-card--right  mitor-card--reverse' => 'rectangle-right-reverse',
                     'mitor-card--left' => 'rectangle-left-normal',
                     'mitor-card--left  mitor-card--reverse' => 'rectangle-left-reverse',

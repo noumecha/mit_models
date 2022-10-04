@@ -20,11 +20,11 @@
     </div>
     {% endif %}
     <div class="blog-card-body">
-        <h5>
-            {% if content.blog_card_title %}
-                {{ content.blog_card_title }}
-            {% endif %}
-        </h5>
+        {% if content.blog_card_title %}
+        <{{settings.region_tag_blog_card_title}} {{ region_attributes.blog_card_title.addClass('blog-title')}}>
+            {{ content.blog_card_title }}
+        </{{settings.region_tag_blog_card_title}}>
+        {% endif %}
         {% if content.blog_card_pdate %}
         <div {{ region_attributes.blog_card_pdate.addClass('posted-date')}} >
             {{ content.blog_card_pdate }}
@@ -39,11 +39,11 @@
             {% if content.blog_card_link %}
                 {{ content.blog_card_link }}
             {% endif %}
-            {% if content.blog_card_svg %}
+            {#% if content.blog_card_svg %}
             <i {{ region_attributes.blog_card_svg.addClass('svg') }}>
                 {{ content.blog_card_svg }}
             </i>
-            {% endif %}
+            {% endif %#}
         </div>
     </div>
 </article>

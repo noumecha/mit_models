@@ -28,9 +28,9 @@
             {% endif %}
             <div class="user-info">
                 {% if content.card_user_title %}
-                <h5 {{ region_attributes.card_user_title.addClass('user-title')}}>
+                <{{settings.region_tag_card_user_title}} {{ region_attributes.card_user_title.addClass('user-title')}}>
                     {{ content.card_user_title}}
-                </h5>
+                </{{settings.region_tag_card_user_title}}>
                 {% endif %}
                 <div class="user-desc d-flex">
                     {% if content.card_user_role %}

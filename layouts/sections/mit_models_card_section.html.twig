@@ -17,9 +17,9 @@
     </div>
     <div class="mitor-card__body col-lg-6 pt-3 pt-lg-0">
         {% if content.mc_title %}
-        <h3 {{ region_attributes.mc_title.addClass('mc-title')}} >
+        <{{settings.region_tag_mc_title}} {{ region_attributes.mc_title.addClass('mc-title')}} >
             {{ content.mc_title }}
-        </h3>
+        </{{settings.region_tag_mc_title}}>
         {% endif %}
         {% if content.mc_description %}
         <div {{ region_attributes.mc_description.addClass('mc-description')}} >

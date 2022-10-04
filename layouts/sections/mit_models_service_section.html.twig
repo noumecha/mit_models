@@ -4,14 +4,14 @@
         <div class="row align-items-center">
             <div class="mitor-card__body col-lg-4 pt-3 pt-lg-0">
                 {% if content.service_small_title %}
-                <h6 {{ region_attributes.service_small_title.addClass('mc-small')}}>
+                <{{settings.region_tag_service_small_title}} {{ region_attributes.service_small_title.addClass('mc-small')}}>
                     {{ content.service_small_title }}
-                </h6>
+                </{{settings.region_tag_service_small_title}}>
                 {% endif %}
                 {% if content.service_title %}
-                <h3 {{ region_attributes.service_title.addClass('mc-title')}}>
+                <{{settings.region_tag_service_title}} {{ region_attributes.service_title.addClass('mc-title')}}>
                     {{ content.service_title }}
-                </h3>
+                </{{settings.region_tag_service_title}}>
                 {% endif %}
                 {% if content.service_description %}
                 <div {{ region_attributes.service_description.addClass('mc-description')}}>

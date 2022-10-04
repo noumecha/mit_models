@@ -67,7 +67,8 @@ class MitModelsOverViewSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            'region_tag_title' => 'h1',
+            'region_tag_overview_large_title' => 'h3',
+            'region_tag_overview_small_title' => 'h6',
             'infos' => [
                 'builder-form' => true,
                 'info' => [

@@ -30,6 +30,9 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  *     "princing_price" = {
  *       "label" = @Translation("princing_price")
  *     },
+ *     "princing_bottom_price" = {
+ *       "label" = @Translation("princing_bottom_price")
+ *     },
  *     "pricing_elements" = {
  *       "label" = @Translation("pricing_elements")
  *     },
@@ -77,11 +80,13 @@ class MitModelsSinglePricingCard extends FormatageModelsTeasers {
     function defaultConfiguration() {
         return [
             'load_library' => true,
+            'region_tag_pricing_title' => 'h6',
             "derivate" => [
                 'value' => 'selected',
                 'options' => [
                     'single-pricing-card--svg-flat' => 'svg-flat',
-                    'single-pricing-card--plan-counter' => 'plan-counter'
+                    'single-pricing-card--plan-counter' => 'plan-counter',
+                    'single-pricing-card--svg-bold' => 'svg-bold',
                 ]
             ],
             'infos' => [
@@ -130,6 +135,12 @@ class MitModelsSinglePricingCard extends FormatageModelsTeasers {
                         'text_html' => [
                             'label' => 'Price',
                             'value' => '$409'
+                        ]
+                    ],
+                    'princing_bottom_price' => [
+                        'text_html' => [
+                            'label' => 'Bottom Price',
+                            'value' => '$1000'
                         ]
                     ],
                     'pricing_elements' => [

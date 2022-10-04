@@ -86,6 +86,7 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
     function defaultConfiguration() {
         return [
             'load_library' => true,
+            'region_tag_card_user_title' => 'h5',
             "derivate" => [
                 'value' => '',
                 'options' => [

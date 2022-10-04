@@ -67,7 +67,7 @@ class MitModelsContactHero extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            'region_tag_title' => 'h1',
+            'region_tag_contact_hero_title' => 'h1',
             'infos' => [
                 'builder-form' => true,
                 'info' => [
