@@ -1,11 +1,12 @@
 {% if content %}
 <section {{ attributes.addClass('mitor-section-title') }}>
     <div class="container">
+        {% if content.title|has_value or content.description|has_value %}
         <div class="section-header">
             {% if content.title %}
-            <h2 {{ region_attributes.title.addClass('section-title') }}>
+            <{{settings.region_tag_title}} {{ region_attributes.title.addClass('section-title') }}>
                 {{ content.title }}
-            </h2>
+            </{{settings.region_tag_title}}>
             {% endif %}
             {% if content.description %}
             <div {{ region_attributes.description.addClass('section-desc') }}>
@@ -13,6 +14,7 @@
             </div>
             {% endif %}
         </div>
+        {% endif %}
         {# content container #}
         <div class="row">
         {% if content.teaser_container %}

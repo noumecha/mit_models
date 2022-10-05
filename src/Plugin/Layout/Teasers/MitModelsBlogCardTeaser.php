@@ -77,6 +77,7 @@ class MitModelsBlogCardTeaser extends FormatageModelsTeasers {
     function defaultConfiguration() {
         return [
             'load_library' => true,
+            'region_tag_blog_card_title' => 'h5',
             'derivate' => [
                 'value' => '',
                 'options' => [
@@ -136,7 +137,7 @@ class MitModelsBlogCardTeaser extends FormatageModelsTeasers {
                             'value' => [
                                 'text' => 'learn more',
                                 'link' => '#',
-                                'class' => 'more-lnk'
+                                'class' => 'more-lnk cover-link'
                             ]
                         ]
                     ],

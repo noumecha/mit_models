@@ -10,9 +10,9 @@
             <div class="row">
                 <div class="mitor-card__body col-lg-10 ">
                     {% if content.hero_variant_title %}
-                    <h3 {{ region_attributes.hero_variant_title.addClass('mc-title')}}>
+                    <{{settings.region_tag_hero_variant_title}} {{ region_attributes.hero_variant_title.addClass('mc-title')}}>
                         {{ content.hero_variant_title }}
-                    </h3>
+                    </{{settings.region_tag_hero_variant_title}}>
                     {% endif %}
                     {% if content.hero_variant_desc %}
                     <div {{ region_attributes.hero_variant_desc.addClass('mc-description')}}>

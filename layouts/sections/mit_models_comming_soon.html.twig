@@ -1,0 +1,45 @@
+{% if content %}
+    {% if content.comming_soon_bg.layout_builder_add_block %}
+        {{ content.comming_soon_bg }}
+    {% endif %}
+    {% if content.comming_soon_bg|layout_bg_img %}
+        {% set attributes = attributes.merge(content.comming_soon_bg|layout_bg_img) %}
+	{% endif %}
+<section {{ attributes.addClass('mitor-coming-soon-1-section-handler') }}>
+    <div class="container">
+        <div class="elements">
+            {% if content.comming_soon_image %}
+            <div {{ region_attributes.comming_soon_image.addClass('logo-link') }}>
+                {{ content.comming_soon_image }}
+            </div>
+            {% endif %}
+            <div class="section-title">
+                {% if content.comming_soon_title %}
+                <h1 {{ region_attributes.comming_soon_title.addClass(['title','h1'])}}>
+                    {{ content.comming_soon_title }}
+                </h1>
+                {% endif %}
+                {% if content.comming_soon_description %}
+                <div {{ region_attributes.comming_soon_description.addClass('description')}}>
+                    {{ content.comming_soon_description }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="countdown">
+                <div class="row">
+                    {% if content.comming_soon_teasers %}
+                        {% for item in content.comming_soon_teasers|array_elements(region_attributes.comming_soon_teasers.addClass('')) %}
+                            {{ item }}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            {% if content.comming_soon_socials %}
+            <div {{ region_attributes.comming_soon_socials.addClass('social-link') }}>
+                {{ content.comming_soon_socials }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endif %}

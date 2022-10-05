@@ -86,6 +86,7 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
     function defaultConfiguration() {
         return [
             'load_library' => true,
+            'region_tag_card_user_title' => 'h5',
             "derivate" => [
                 'value' => '',
                 'options' => [
@@ -94,7 +95,8 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
                     'simple-card--icon' => 'icon',
                     'simple-card--icon-bg' => 'icon-bg',
                     'simple-card--icon-left' => 'icon-left',
-                    'simple-card--icon-no-effect' => 'icon-no-effect'
+                    'simple-card--icon-no-effect' => 'icon-no-effect',
+                    'simple-card--user-info-img-absolute' => 'icon-user-info-img-absolute',
                 ]
             ],
             'infos' => [

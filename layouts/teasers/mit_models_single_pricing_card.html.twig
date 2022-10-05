@@ -7,9 +7,14 @@
         </div>
         {% endif %}
         <div class="head">
-            {% if content.small_svg %}
-            <div {{ region_attributes.small_svg.addClass('head-svg') }} >
-                {{ content.small_svg }}
+            {% if content.princing_price %}
+            <h4 {{ region_attributes.princing_price.addClass(['price','first-price','h4'])}} >
+                {{ content.princing_price }}
+            </h4>
+            {% endif %}
+            {% if content.big_svg %}
+            <div {{ region_attributes.big_svg.addClass('head-svg') }} >
+                {{ content.big_svg }}
             </div>
             {% endif %}
             {% if content.pricing_title %}
@@ -18,9 +23,14 @@
             </h6>
             {% endif %}
             {% if content.princing_price %}
-            <div {{ region_attributes.princing_price.addClass('price')}} >
+            <h3 {{ region_attributes.princing_price.addClass(['price','h3'])}} >
                 {{ content.princing_price }}
-            </div>
+                {% if content.princing_duration %}
+                <div {{ region_attributes.princing_duration.addClass(['price-duration'])}}>
+                    {{ content.princing_duration }}
+                </div>
+                {% endif %}
+            </h3>
             {% endif %}
         </div>
     </div>
@@ -42,6 +52,11 @@
 	    {% endif %}
     </div>
     <div class="card-bottom">
+        {% if content.princing_price %}
+        <div {{ region_attributes.princing_price.addClass('price')}}>
+            {{ content.princing_price }}
+        </div>
+        {% endif %}
         <div class="choose">
             {% if content.princing_bottom_link %}
                 {% for item in content.princing_bottom_link|array_elements(region_attributes.princing_bottom_link.addClass('link-text')) %}
