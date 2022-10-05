@@ -1,0 +1,9 @@
+{% if content %}
+<div id="mitor-top-project" {{ attributes.addClass('mitor-grid-img')}}>
+    {% if content.project_content %}
+    	{% for item in content.project_content|array_elements(region_attributes.project_content.addClass('grid-item')) %}
+    	    {{ item }} 
+    	{% endfor %}
+	{% endif %}
+</div>
+{% endif %}

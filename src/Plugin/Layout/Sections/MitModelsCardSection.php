@@ -76,7 +76,7 @@ class MitModelsCardSection extends FormatageModelsSection {
                 'options' => [
                     'mitor-card--right' => 'rectangle-right-normal',
                     'mitor-card--carree' => 'carree',
-                    'mitor-card--reverse' => 'carree-reverse',
+                    'mitor-card--reverse' => 'reverse',
                     'mitor-card--reverse   mitor-card--carree-right-up' => 'carree-reverse-right-up',
                     'mitor-card--carree-up' => 'carree-up',
                     'mitor-card--reverse mitor-card--carree-right' => 'carree-reverse-right',
