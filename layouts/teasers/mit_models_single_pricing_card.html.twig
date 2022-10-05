@@ -7,31 +7,35 @@
         </div>
         {% endif %}
         <div class="head">
+            {# for single-pricing-card #}
             {% if content.princing_price %}
-            <h4 {{ region_attributes.princing_price.addClass(['price','first-price','h4'])}} >
+            <div {{ region_attributes.princing_price.addClass(['price','first-price','h4'])}} >
                 {{ content.princing_price }}
-            </h4>
+            </div>
             {% endif %}
+            {# endfor single-pricing-card #}
             {% if content.big_svg %}
             <div {{ region_attributes.big_svg.addClass('head-svg') }} >
                 {{ content.big_svg }}
             </div>
             {% endif %}
             {% if content.pricing_title %}
-            <h6 {{ region_attributes.pricing_title.addClass('title')}} >
+            <h3 {{ region_attributes.pricing_title.addClass(['title','h5'])}} >
                 {{ content.pricing_title }}
-            </h6>
+            </h3>
             {% endif %}
+            {# for single-pricing-card--svg-flat && --plan-counter #}
             {% if content.princing_price %}
-            <h3 {{ region_attributes.princing_price.addClass(['price','h3'])}} >
+            <h2 {{ region_attributes.princing_price.addClass(['price','h2'])}} >
                 {{ content.princing_price }}
-                {% if content.princing_duration %}
+                {#% if content.princing_duration %}
                 <div {{ region_attributes.princing_duration.addClass(['price-duration'])}}>
                     {{ content.princing_duration }}
                 </div>
-                {% endif %}
-            </h3>
+                {% endif %#}
+            </h2>
             {% endif %}
+            {# end for single-pricing-card--svg-flat && --plan-counter #}
         </div>
     </div>
     {% if content.pricing_counter %}
@@ -43,28 +47,23 @@
         {% if content.pricing_elements %}
             <ul {{ region_attributes.pricing_elements.addClass('elements') }} >
                 {{ content.pricing_elements }}  
-            </ul>
-            {#% for item in content.pricing_elements
-                |array_elements(region_attributes.pricing_elements.addClass('elements')) 
-            %}
-                {{ item }}
-            {% endfor %#}          
+            </ul>          
 	    {% endif %}
     </div>
     <div class="card-bottom">
+        {# for single-pricing-card--svg-bold #}
         {% if content.princing_price %}
-        <div {{ region_attributes.princing_price.addClass('price')}}>
+        <h3 {{ region_attributes.princing_price.addClass(['price','h3'])}}>
             {{ content.princing_price }}
-        </div>
+        </h3>
         {% endif %}
+        {# end for single-pricing-card--svg-bold #}
         <div class="choose">
             {% if content.princing_bottom_link %}
                 {% for item in content.princing_bottom_link|array_elements(region_attributes.princing_bottom_link.addClass('link-text')) %}
                     {{ item }}
                 {% endfor %}
             {% endif %}
-            {#% if content.pricing_bottom_svg %#}
-            {#{ content.pricing_bottom_svg }#}
             {% if content.pricing_bottom_svg %}
                 {% for item in content.pricing_bottom_svg|array_elements(region_attributes.pricing_bottom_svg.addClass('svg')) %}
                     {{ item }}
