@@ -1,0 +1,48 @@
+{% if content %}
+<div {{ attributes.addClass('mitor-tab-selection') }}>
+    <div class="bundle-selection">
+        <ul class="nav nav-pills" role="tablist" id="btnTab">
+            <li class="nav-item">
+                <a href="#month" class="  nav-link  active" id="month-tab" data-toggle="tab" type="button"
+                   role="tab"
+                   aria-controls="home" aria-selected="false">
+                    {% if content.type_one %}
+                        {{ content.type_one }}
+                    {% endif %}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#years" class=" nav-link " id="years-tab" data-toggle="tab" d type="button"
+                   role="tab"
+                   aria-controls="home" aria-selected="true">
+                    {% if content.type_two %}
+                        {{ content.type_two }}
+                    {% endif %}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content" id="btnTabContent">
+        <!-- content for type one -->
+        <div class="tab-pane fade show " id="years" role="tabpanel" aria-labelledby="years-tab">
+            <div class="row w-100 ">
+                {% if content.pricing_content_one %}
+                    {% for item in content.pricing_content_one|array_elements(region_attributes.pricing_content_one.addClass('')) %}
+                        {{ item }} 
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <!-- content for type two -->
+        <div class="tab-pane fade show active" id="month" role="tabpanel" aria-labelledby="month-tab">
+            <div class="row w-100 items ">
+                {% if content.pricing_content_two %}
+                    {% for item in content.pricing_content_two|array_elements(region_attributes.pricing_content_two.addClass('')) %}
+                        {{ item }} 
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

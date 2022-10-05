@@ -79,9 +79,10 @@ class MitModelsSinglePricingCard extends FormatageModelsTeasers {
             'load_library' => true,
             'region_tag_pricing_title' => 'h6',
             "derivate" => [
-                'value' => 'selected',
+                'value' => 'simple',
                 'options' => [
                     'single-pricing-card--svg-flat' => 'svg-flat',
+                    'single-pricing-card' => 'simple',
                     'single-pricing-card--plan-counter' => 'plan-counter',
                     'single-pricing-card--svg-bold' => 'svg-bold',
                 ]
