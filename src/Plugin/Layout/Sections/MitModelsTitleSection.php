@@ -80,6 +80,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
                     'mitor-section-title--bg' => 'before-bg',
                     'bg-light' => 'bg-light',
                     'mitor-section-title--bottom-black' => 'bottom-black',
+                    'mitor-section-title--color-middle' => 'color-middle',
                 ]
             ],
             'region_tag_title' => 'h1',
