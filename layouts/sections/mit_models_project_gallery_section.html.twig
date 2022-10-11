@@ -1,0 +1,97 @@
+{% if content %}
+<section {{ attributes.addClass('mitor-section-title') }}>
+    <div class="container">
+        <div class="section-header">
+            {% if content.project_gallery_title %}
+            <h3 {{ region_attributes.project_gallery_title.addClass(['section-title','h2'])}}>
+                {{ content.project_gallery_title }}
+            </h3>
+            {% endif %}
+        </div>
+        <div class="mitor-project-tab">
+            {# Tab Controller #}
+            <div class="mpt-tabs">
+                <ul class="nav nav-pills expo-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Marketing-tab" data-toggle="tab" href="#Marketing"
+                           role="tab"
+                           aria-controls="Marketing"
+                           aria-selected="true">
+                           {% if content.tab_one %}
+                            {{ content.tab_one }}
+                           {% endif %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " id="Design-tab" data-toggle="tab" href="#Design" role="tab"
+                           aria-controls="Design"
+                           aria-selected="false">
+                           {% if content.tab_two %}
+                            {{ content.tab_two }}
+                           {% endif %}
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="Development-tab" data-toggle="tab" href="#Development" role="tab"
+                           aria-controls="Development" aria-selected="false">
+                           {% if content.tab_three %}
+                            {{ content.tab_three }}
+                           {% endif %}
+                           </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Supports-tab " data-toggle="tab" href="#Supports"
+                           role="tab"
+                           aria-controls="Supports"
+                           aria-selected="false">
+                           {% if content.tab_four %}
+                            {{ content.tab_four }}
+                           {% endif %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {# Tab Elements Slide #}
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content" id="myTabContent">
+                        <div class=" tab-pane fade show active" id="Marketing" role="tabpanel"
+                            aria-labelledby="Marketing-tab">
+                            {% if content.slider_one %}
+                                {{ content.slider_one }}
+                            {% endif %}
+                        </div>
+
+                        <div class=" tab-pane fade" id="Design" role="tabpanel" aria-labelledby="Design-tab">
+                            <div class="row justify-content-center no-gutters">
+                                {% if content.slider_two %}
+                                    {{ content.slider_two }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class=" tab-pane fade" id="Development" role="tabpanel" aria-labelledby="Development-tab">
+                            <div class="row justify-content-center no-gutters">
+                                {% if content.slider_three %}
+                                    {{ content.slider_three }}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class=" tab-pane fade" id="Supports" role="tabpanel" aria-labelledby="Supports-tab">
+                            <div class="row justify-content-center no-gutters">
+                                {% if content.slider_four %}
+                                    {{ content.slider_four }}
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endif %}
