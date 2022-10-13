@@ -1,0 +1,7 @@
+{% if content %}
+<div {{ attributes.addClass('mpt-img')}}>
+    {% if content.mpt_img_element %}
+        {{ content.mpt_img_element }}
+    {% endif %}
+</div>
+{% endif %}

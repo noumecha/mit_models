@@ -1,47 +1,70 @@
 {% if content %}
+<pre>
+    {#{ dump() }#}
+    {#{ dump(settings) }#}
+</pre>
+{% set x1 = region_attributes.pricing_price %}
+{% set x2 = region_attributes.pricing_price %}
+{% set x3 = region_attributes.pricing_price %}
 <div {{ attributes.addClass('single-pricing-card') }} >
     <div class="card-top">
         {% if content.big_svg %}
-        <div {{ region_attributes.big_svg.addClass('back-svg')}}>
+        <div class="back-svg">
             {{ content.big_svg }}
         </div>
         {% endif %}
         <div class="head">
-            {# for single-pricing-card #}
-            {% if content.princing_price %}
-            <div {{ region_attributes.princing_price.addClass(['price','first-price','h4'])}} >
-                {{ content.princing_price }}
-            </div>
+            {# for single-pricing-card--plan-counter #}
+            {% if content.princing_price and settings.derivate.value=='single-pricing-card--plan-counter' %}
+            <h3 class="price first-price h2"{#{ x1.addClass(['price','first-price','h2'])}#} > {#addClass(['price','first-price','h4'])#}
+                {% if content.princing_price %}
+                    {% for item in content.princing_price|array_elements(region_attributes.princing_price.addClass('')) %}
+                        {{ item }} 
+                    {% endfor %}
+                {% endif %}
+            </h3>
             {% endif %}
             {# endfor single-pricing-card #}
             {% if content.big_svg %}
-            <div {{ region_attributes.big_svg.addClass('head-svg') }} >
+            <div class="head-svg" >
                 {{ content.big_svg }}
             </div>
             {% endif %}
             {% if content.pricing_title %}
-            <h3 {{ region_attributes.pricing_title.addClass(['title','h5'])}} >
+            <h3 {{ region_attributes.pricing_title.addClass(['title','h4'])}} >
                 {{ content.pricing_title }}
             </h3>
             {% endif %}
-            {# for single-pricing-card--svg-flat && --plan-counter #}
-            {% if content.princing_price %}
-            <h2 {{ region_attributes.princing_price.addClass(['price','h2'])}} >
-                {{ content.princing_price }}
-                {#% if content.princing_duration %}
-                <div {{ region_attributes.princing_duration.addClass(['price-duration'])}}>
-                    {{ content.princing_duration }}
-                </div>
-                {% endif %#}
+            {# for for single-pricing-card--svg-flat #}
+            {% if content.princing_price and settings.derivate.value=='single-pricing-card--svg-flat' or settings.derivate.value is empty %}
+            <h2 class="price h2" {#{ x2.addClass(['price','h'])}#} >
+                {% if content.princing_price %}
+                    {% for item in content.princing_price|array_elements(region_attributes.princing_price.addClass('')) %}
+                        {{ item }} 
+                    {% endfor %}
+                    {#{ content.princing_price }#}
+                    {% if content.princing_duration|has_value %}
+                    <span {{ region_attributes.princing_duration.addClass(['price-duration'])}}>
+                        {{ content.princing_duration|layout_value }}
+                    </span>
+                    {% endif %}
+                {% endif %}
             </h2>
             {% endif %}
-            {# end for single-pricing-card--svg-flat && --plan-counter #}
+            {# end for single-pricing-card #}
         </div>
     </div>
     {% if content.pricing_counter %}
     <div {{ region_attributes.pricing_counter.addClass('counter-handler')}}>
         {{ content.pricing_counter }}
     </div>
+    {#<div class="counter-handler">
+        <button class=" ctrlBtn" id="decrement">-</button>
+        <input type="text" value="1" id="counterValue" class="form-control text-center">
+        <button class=" ctrlBtn" id="increment">
+            +
+        </button>
+    </div>#}
     {% endif %}
     <div class="card-middle">
         {% if content.pricing_elements %}
@@ -52,9 +75,14 @@
     </div>
     <div class="card-bottom">
         {# for single-pricing-card--svg-bold #}
-        {% if content.princing_price %}
-        <h3 {{ region_attributes.princing_price.addClass(['price','h3'])}}>
-            {{ content.princing_price }}
+        {% if content.princing_price and settings.derivate.value=='single-pricing-card--svg-bold' %}
+        <h3 class="price h2" {#{ x3.addClass(['price','h2'])}#}> {#['price','h3'])#}
+            {% if content.princing_price %}
+                {% for item in content.princing_price|array_elements(region_attributes.princing_price.addClass('')) %}
+                    {{ item }} 
+                {% endfor %}
+            {% endif %}
+            {#{ content.princing_price }#}
         </h3>
         {% endif %}
         {# end for single-pricing-card--svg-bold #}

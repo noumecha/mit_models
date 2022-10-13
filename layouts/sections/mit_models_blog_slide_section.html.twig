@@ -1,0 +1,37 @@
+{% if content %}
+<section {{ attributes.addClass(['mitor-section-title','mitor-section-title--absolute-content','bg-light'])}}>
+    <div class="container">
+        <div class="row align-items-center ">
+            <div class="mitor-card__body col-lg-4 pb-5 pb-lg-0 ">
+                {% if content.blog_slide_stitle  %}
+                <h6 {{ region_attributes.blog_slide_stitle.addClass(['mc-small','h6'])}}>
+                    {{ content.blog_slide_stitle }}
+                </h6>
+                {% endif %}
+                {% if content.blog_slide_title %}
+                <h3 {{ region_attributes.blog_slide_title.addClass(['mc-title','h3'])}}>
+                    {{ content.blog_slide_title }}
+                </h3>
+                {% endif %}
+                {% if content.blog_slide_description %}
+                <div {{ region_attributes.blog_slide_description.addClass('mc-description')}}>
+                    {{ content.blog_slide_description }}
+                </div>
+                {% endif %}
+                {% if content.blog_slide_link %}
+                    {% for item in content.blog_slide_link|array_elements(region_attributes.blog_slide_link.addClass('')) %}
+                        {{ item }} 
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col-lg-8 pl-md-5 tree-card-carousel">
+                <div class="tcc-content">
+                    {% if content.blog_slide_container %}
+                        {{ content.blog_slide_container }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

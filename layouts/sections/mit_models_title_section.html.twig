@@ -16,9 +16,9 @@
         </div>
         {% endif %}
         {# content container #}
-        <div class="row">
+        <div class="row items">
         {% if content.teaser_container %}
-    	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('')) %}
+    	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('item')) %}
     	        {{ item }} 
     	    {% endfor %}
 	    {% endif %}
