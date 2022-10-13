@@ -82,7 +82,8 @@ class MitModelsMitorHeroVariant extends FormatageModelsSection {
                     'mitor-hero-2--book' => 'book',
                     'mitor-hero-2--pyramid' => 'pyramid',
                     'mitor-hero-2--ocean' => 'ocean',
-                    'mitor-hero-2--titi' => 'titi'
+                    'mitor-hero-2--titi' => 'titi',
+                    'mitor-hero-2--ocean' => 'wave ocean'
                 ]
             ],
             'region_tag_title' => 'h1',
