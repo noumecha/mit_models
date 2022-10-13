@@ -1,0 +1,19 @@
+{% if content %}
+<div {{ attributes.addClass('value-card') }}>
+    {% if content.value_card_icon %}
+    <div {{ region_attributes.value_card_icon.addClass('value-icon')}}>
+        {{ content.value_card_icon }}
+    </div>
+    {% endif %}
+    {% if content.value_card_title %}
+    <div {{ region_attributes.value_card_title.addClass(['value-title','h5']) }}>
+        {{ content.value_card_title }}
+    </div>
+    {% endif %}
+    {% if content.value_card_description %}
+    <div {{ region_attributes.value_card_description.addClass('value-desc')}}>
+        {{ content.value_card_description }}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
