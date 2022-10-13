@@ -38,6 +38,7 @@
             {% if content.listable_items %}
     	        {% for item in content.listable_items|array_elements(region_attributes.listable_items.addClass('')) %}
     	            {{ item }} 
+                    {#{ dump() }#}
     	        {% endfor %}
 	        {% endif %}
         </div>

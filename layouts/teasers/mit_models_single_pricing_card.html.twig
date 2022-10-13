@@ -36,7 +36,7 @@
             </h3>
             {% endif %}
             {# for for single-pricing-card--svg-flat #}
-            {% if content.princing_price and settings.derivate.value=='single-pricing-card--svg-flat' or settings.derivate.value is empty %}
+            {% if content.princing_price and settings.derivate.value=='single-pricing-card--svg-flat' or settings.derivate.value=='single-pricing-card--plan-option' or settings.derivate.value is empty %}
             <h2 class="price h2" {#{ x2.addClass(['price','h'])}#} >
                 {% if content.princing_price %}
                     {% for item in content.princing_price|array_elements(region_attributes.princing_price.addClass('')) %}
