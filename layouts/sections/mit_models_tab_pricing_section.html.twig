@@ -1,0 +1,78 @@
+{% if content %}
+<section {{ attributes.addClass(['mitor-section-title ','mitor-section-title','bg-light'])}}>
+    <div class=" mitor-tab-row">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="mitor-card__body col-lg-5 pb-3 pb-lg-0">
+                    {% if content.tab_pricing_stitle %}
+                    <h6 {{ region_attributes.tab_pricing_stitle.addClass(['mc-small','h6'])}}>
+                        {{ content.tab_pricing_stitle }}
+                    </h6>
+                    {% endif %}
+                    {% if content.tab_pricing_title %}
+                    <h3 {{ region_attributes.tab_pricing_title.addClass(['mc-title','h3'])}}>
+                        {{ content.tab_pricing_title }}
+                    </h3>
+                    {% endif %}
+                    {% if content.tab_pricing_description %}
+                    <div {{ region_attributes.tab_pricing_description.addClass('mc-description')}}>
+                        {{ content.tab_pricing_description }}
+                    </div>
+                    {% endif %}
+                    <div class="d-flex pt-5 ml-5">
+                        <div class="bundle-selection">
+                            <ul class="nav nav-pills" role="tablist" id="btnTab">
+                                <li class="nav-item">
+                                    <a href="#mois" class="  nav-link  " id="mois-tab" data-toggle="tab"
+                                       type="button"
+                                       role="tab"
+                                       aria-controls="home" aria-selected="false">
+                                        {% if content.tab_pricing_one %}
+                                            {{ content.tab_pricing_one }}
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#annee" class=" nav-link active" id="annee-tab" data-toggle="tab" d
+                                       type="button"
+                                       role="tab"
+                                       aria-controls="home" aria-selected="true">
+                                        {% if content.tab_pricing_two %}
+                                            {{ content.tab_pricing_two}}
+                                        {% endif %}
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7  ">
+                    <div class="tab-content">
+                        <div class="tab-pane fade   " id="mois" role="tabpanel"
+                             aria-labelledby="years-tab">
+                            <div class="row align-items-center">
+                                {% if content.tab_pricing_slide_one %}
+                                    {% for item in content.tab_pricing_slide_one|array_elements(region_attributes.tab_pricing_slide_one.addClass('')) %}
+                                        {{ item }}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade   active show " id="annee" role="tabpanel"
+                             aria-labelledby="years-tab">
+                            <div class="row align-items-center">
+                                {% if content.tab_pricing_slide_two %}
+                                    {% for item in content.tab_pricing_slide_two|array_elements(region_attributes.tab_pricing_slide_two.addClass('')) %}
+                                        {{ item }}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
