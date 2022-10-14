@@ -1,9 +1,14 @@
 {% if content %}
 <div {{ attributes.addClass(['mitor-card','row'])}}>
     <div class="mitor-card__img col-lg-6">
-        {% if content.mc_image %}
-        <div {{ region_attributes.mc_image.addClass('img-bloc') }} >
-            {{ content.mc_image }}
+        {#% if content.mc_image %#}
+        <div class="img-bloc row" {#{ region_attributes.mc_image.addClass('img-bloc') }#} >
+            {#{ content.mc_image }#}
+            {% if content.mc_image %}
+                {% for item in content.mc_image|array_elements(region_attributes.mc_image.addClass('')) %}
+                    {{ item }}
+                {% endfor %}
+            {% endif %}
             <div class="mitor-play-btn">
                 <div class="mtb-play">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -13,13 +18,13 @@
                 </div>
             </div>
         </div>
-        {% endif %}
+        {#% endif %#}
     </div>
     <div class="mitor-card__body col-lg-6 pt-3 pt-lg-0">
         {% if content.mc_title %}
-        <h3 {{ region_attributes.mc_title.addClass('mc-title')}} >
+        <h1 {{ region_attributes.mc_title.addClass('mc-title h1')}} >
             {{ content.mc_title }}
-        </h3>
+        </h1>
         {% endif %}
         {% if content.mc_description %}
         <div {{ region_attributes.mc_description.addClass('mc-description')}} >

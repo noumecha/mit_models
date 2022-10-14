@@ -88,9 +88,8 @@ class MitModelsValueSection extends FormatageModelsSection {
                         ]
                     ],
                     'value_section_bgimage' => [
-                        'text_html' => [
-                            'label' => 'Bg Image',
-                            'value' => ''
+                        'img_bg' => [
+                            'label' => 'Bg Image'
                         ]
                     ],
                     'value_section_teaser' => [
