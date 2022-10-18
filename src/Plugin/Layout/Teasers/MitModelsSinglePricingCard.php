@@ -86,6 +86,7 @@ class MitModelsSinglePricingCard extends FormatageModelsTeasers {
                     'single-pricing-card--plan-counter' => 'plan-counter',
                     'single-pricing-card--svg-bold' => 'svg-bold',
                     'single-pricing-card--plan-option' => 'plan-option',
+                    'single-pricing-card--no-counter' => 'no-counter',
                 ]
             ],
             'infos' => [

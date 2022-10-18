@@ -15,7 +15,7 @@
         {% endif %}
         <div class="head">
             {# for single-pricing-card--plan-counter #}
-            {% if content.princing_price and settings.derivate.value=='single-pricing-card--plan-counter' %}
+            {% if content.princing_price and settings.derivate.value=='single-pricing-card--plan-counter' or settings.derivate.value=='single-pricing-card--no-counter' %}
             <h3 class="price first-price h2"{#{ x1.addClass(['price','first-price','h2'])}#} > {#addClass(['price','first-price','h4'])#}
                 {% if content.princing_price %}
                     {% for item in content.princing_price|array_elements(region_attributes.princing_price.addClass('')) %}
