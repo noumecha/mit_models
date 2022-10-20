@@ -77,8 +77,12 @@ class MitModelsMenu extends FormatageModelsSection {
                         'nav-list'
                     ]
                 ];
-                //
-                $this->formatListMenus($menu_nav[$k]['content']['#items']);
+                // format-it if is not empty
+                if (!empty($menu_nav[$k]['content']['#items'])) 
+                {
+                    $this->formatListMenus($menu_nav[$k]['content']['#items']);
+                    //dump($menu_nav[$k]['content']['#items']);
+                }
             }
         }
         return $menu_nav;

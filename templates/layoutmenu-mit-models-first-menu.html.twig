@@ -24,25 +24,19 @@
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0, show_icone_home) }}
-{% macro menu_links(items, attributes, menu_level, show_icone_home=null) %}
+{% macro menu_links(items, attributes, menu_level, show_icone_home) %}
 	{% import _self as menus %}
 	{% if items %}
+		{#{ dump(items) }#}
 		{% if menu_level == 0 %}
 			<ul {{attributes.addClass('nav-list')}}>
 		{% else %}
 			<ul class="sub-menu">
         {% endif %}
 			{% for item in items %}
-				{%
-        set classes = [
-        ]
-      %}
+				{% set classes = [] %}
 				<li{{item.attributes.addClass(classes)}}>
-					{%
-          set link_classes = [
-            'nav-link',
-          ]
-        %}
+					{% set link_classes = ['nav-link',] %}
 					{% if item.below %}
 						{{ link(item.title, item.url, {'class': link_classes, 'data-toggle': 'dropdown', 'aria-expanded': 'false', 'aria-haspopup': 'true' }) }}
 						{{ menus.menu_links(item.below, attributes, menu_level + 1) }}
