@@ -83,6 +83,13 @@ class MitModelsProjectGallerySection extends FormatageModelsSection {
         return [
             'load_libray' => true,
             'region_tag_title' => 'h1',
+            'derivate' => [
+                'value' => 'select',
+                'options' => [
+                    'mitor-section-title--text-left' => 'text-left',
+                    'bg-light' => 'bg-light',
+                ]
+            ],
             'infos' => [
                 'builder-form' => true,
                 'info' => [
