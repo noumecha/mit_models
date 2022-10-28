@@ -4,3 +4,19 @@
  * @file
  * Primary module hooks for mit_models module.
  */
+
+/**
+* Implements hook_theme().
+*/
+
+function mit_models_theme() {
+  // pre-formatage et template pour le menu.
+  $hooks['layoutmenu_mit_models_first_menu'] = [
+    'render element' => 'element',
+    'preprocess functions' => [
+      'template_preprocess_layoutmenu_mit_models_first_menu'
+    ],
+    'file' => 'mit_models.theme.inc'
+  ];
+  return $hooks;
+}

@@ -27,6 +27,9 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *     "title_section_btn" = {
  *      "label" = @Translation("title_section_btn"),
  *     },
+ *     "slider_container" = {
+ *      "label" = @Translation("slider_container"),
+ *     },
  *     "teaser_container" = {
  *      "label" = @Translation("teaser_container"),
  *     },
@@ -81,6 +84,8 @@ class MitModelsTitleSection extends FormatageModelsSection {
                     'bg-light' => 'bg-light',
                     'mitor-section-title--bottom-black' => 'bottom-black',
                     'mitor-section-title--color-middle' => 'color-middle',
+                    'mitor-section-title--item-midle-border' => 'item-midle-border',
+                    'mitor-section-title--text-left' => 'text-left',
                 ]
             ],
             'region_tag_title' => 'h1',
@@ -113,6 +118,12 @@ class MitModelsTitleSection extends FormatageModelsSection {
                         'text_html' => [
                             'label' => ' Descritpion ',
                             'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
+                        ]
+                    ],
+                    'slider_container' => [
+                        'text_html' => [
+                            'label' => 'Slider Container',
+                            'value' => '',
                         ]
                     ],
                     'teaser_container' => [

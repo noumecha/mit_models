@@ -1,9 +1,9 @@
 {% if content %}
 <div {{ attributes.addClass('mitor-hero-2')}} >
     {% if content.hero_variant_image %}
-    <div {{ region_attributes.hero_variant_image.addClass('')}}>
-        {{ content.hero_variant_image }}
-    </div>
+        {% for item in content.hero_variant_image|array_elements(region_attributes.hero_variant_image.addClass('cover-hero-image')) %}
+            {{ item }}
+        {% endfor %}
     {% endif %}
     <div class="mitor-hero-content">
         <div class="container">

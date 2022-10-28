@@ -1,1 +1,1 @@
-import '@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/mitor/mitor-card-image.scss'
+import '@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/mitor/mitor-card-image.scss';
