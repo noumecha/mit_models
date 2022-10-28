@@ -67,6 +67,12 @@ class MitModelsContactHero extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
+            'derivate' => [
+                'value' => '',
+                'options' => [
+                    'mitor-contact-hero--vixcon' => 'vixcon',
+                ]
+            ],
             'infos' => [
                 'builder-form' => true,
                 'info' => [
