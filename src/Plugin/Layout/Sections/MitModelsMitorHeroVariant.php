@@ -33,100 +33,100 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *   }
  * )
  */
-
 class MitModelsMitorHeroVariant extends FormatageModelsSection {
-
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_hero_variant.png");
-    }
-    
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-     */
-    public function build(array $regions) {
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        return $build;
-    }
-    
-    /**
-     * 
-     * {@inheritdoc}
-     * 
-     */
-    function defaultConfiguration() {
-        return [
-            'load_libray' => true,
-            'region_tag_hero_variant_title' => 'h3',
-            'derivate' => [
-                'value' => '',
-                'options' => [
-                    'mitor-hero-2--curve' => 'curve',
-                    'mitor-hero-2--triangle-asym' => 'triangle-asym',
-                    'mitor-hero-2--triangle' => 'triangle',
-                    'mitor-hero-2--curve-asym' => 'curve-asym',
-                    'mitor-hero-2--split' => 'split',
-                    'mitor-hero-2--fan-opacity' => 'fan-opacity',
-                    'mitor-hero-2--wave' => 'wave',
-                    'mitor-hero-2--mountain' => 'mountain',
-                    'mitor-hero-2--book' => 'book',
-                    'mitor-hero-2--pyramid' => 'pyramid',
-                    'mitor-hero-2--ocean' => 'ocean',
-                    'mitor-hero-2--titi' => 'titi',
-                    'mitor-hero-2--ocean' => 'wave ocean'
-                ]
-            ],
-            'region_tag_title' => 'h1',
-            'infos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Texte information',
-                    'loader' => 'static'
-                ],
-                'fields' => [
-                    'hero_variant_title' => [
-                        'text_html' => [
-                            'label' => 'Contenu',
-                            'value' => 'We Ensure the Success of Your Products and Business'
-                        ]
-                    ],
-                    'hero_variant_image' => [
-                        'text_html' => [
-                            'label' => 'Image',
-                            'value' => ' <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-2/banner.jpg" alt="">'
-                        ]
-                    ],
-                    'hero_variant_desc' => [
-                        'text_html' => [
-                            'label' => 'Contenu',
-                            'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_hero_variant.png");
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+   */
+  public function build(array $regions) {
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  function defaultConfiguration() {
+    return [
+      'load_libray' => true,
+      'region_tag_hero_variant_title' => 'h3',
+      'derivate' => [
+        'value' => '',
+        'options' => [
+          'mitor-hero-2--curve' => 'curve',
+          'mitor-hero-2--triangle-asym' => 'triangle-asym',
+          'mitor-hero-2--triangle' => 'triangle',
+          'mitor-hero-2--curve-asym' => 'curve-asym',
+          'mitor-hero-2--split' => 'split',
+          'mitor-hero-2--fan-opacity' => 'Fan-opacity',
+          'mitor-hero-2--wave' => 'Wave',
+          'mitor-hero-2--mountain' => 'Mountain',
+          'mitor-hero-2--book' => 'Book',
+          'mitor-hero-2--pyramid' => 'Pyramid',
+          'mitor-hero-2--ocean' => 'Ocean',
+          'mitor-hero-2--titi' => 'Titi',
+          'mitor-hero-2--ocean' => 'Wave ocean',
+          'mitor-hero-2--text-left' => 'Text left'
+        ]
+      ],
+      'region_tag_title' => 'h1',
+      'infos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Texte information',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'hero_variant_title' => [
+            'text_html' => [
+              'label' => 'Contenu',
+              'value' => 'We Ensure the Success of Your Products and Business'
+            ]
+          ],
+          'hero_variant_image' => [
+            'text_html' => [
+              'label' => 'Image',
+              'value' => ' <img src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-2/banner.jpg" alt="">'
+            ]
+          ],
+          'hero_variant_desc' => [
+            'text_html' => [
+              'label' => 'Contenu',
+              'value' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                                         labore
                                         et dolore magna aliqua. Quis ipsum suspe ndisse ultrices gravida. Risus commodo viverra maecenas'
-                        ]
-                    ],
-                    'hero_variant_btn' => [
-                        'url' => [
-                            'label' => 'Lien',
-                            'value' => [
-                                'text' => 'Get Started',
-                                'link' => '#',
-                                'class' => 'mitor-btn'
-                            ]
-                        ]
-                    ],
-                ]
             ]
-        ] + parent::defaultConfiguration();
-    }
-
+          ],
+          'hero_variant_btn' => [
+            'url' => [
+              'label' => 'Lien',
+              'value' => [
+                'text' => 'Get Started',
+                'link' => '#',
+                'class' => 'mitor-btn'
+              ]
+            ]
+          ]
+        ]
+      ]
+    ] + parent::defaultConfiguration();
+  }
+  
 }
