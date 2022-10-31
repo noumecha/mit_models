@@ -17,7 +17,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  * @Layout (
  *   id = "mit_models_menu",
  *   label = @Translation("mit_models_menu"),
- *   category = @Translation("Formatage Models"),
+ *   category = @Translation("Mit Models : menu"),
  *   path = "layouts/sections/menus",
  *   template = "mit_models_menu",
  *   library = "mit_models/mit_models_menu",
