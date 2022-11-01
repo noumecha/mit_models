@@ -98,6 +98,7 @@ class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
                     'simple-card--icon-no-effect' => 'icon-no-effect',
                     'simple-card--user-info-img-absolute' => 'icon-user-info-img-absolute',
                     'simple-card--icon-left-black' => 'icon-left-black',
+                    'simple-card--icon-left-no-bg' => 'icon-left-no-bg',
                 ]
             ],
             'infos' => [
