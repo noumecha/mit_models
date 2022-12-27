@@ -67,6 +67,8 @@ class MitModelsValueSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
+            'region_css_value_section_title' => 'h1 text-white',
+            'region_css_value_section_description' => 'h5 text-white',
             'infos' => [
                 'builder-form' => true,
                 'info' => [
