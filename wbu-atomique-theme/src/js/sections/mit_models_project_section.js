@@ -1,1 +1,1 @@
-import "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/mitor/mitor-grid-img.scss";
+import "@stephane888/wbu-atomique/scss/organisme/sections/theme_builder/mitor/mit_models_project_section.scss";
