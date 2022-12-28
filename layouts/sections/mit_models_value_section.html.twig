@@ -9,14 +9,14 @@
     <div class="container">
         <div class="section-header">
             {% if content.value_section_title %}
-            <h3 {{ region_attributes.value_section_title.addClass(['section-title','h3'])}}>
+            <h1 {{ region_attributes.value_section_title.addClass(['section-title','h1'])}}>
                 {{ content.value_section_title }}
-            </h3>
+            </h1>
             {% endif %}
             {% if content.value_section_description %}
-            <div {{ region_attributes.value_section_description.addClass('section-desc')}}>
+            <h5 {{ region_attributes.value_section_description.addClass(['section-desc','h5'])}}>
                 {{ content.value_section_description }}
-            </div>
+            </h5>
             {% endif %}
         </div>
         <div class="value-list">
