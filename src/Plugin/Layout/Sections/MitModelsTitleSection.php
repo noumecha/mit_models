@@ -75,7 +75,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
      */
     function defaultConfiguration() {
         return [
-            'load_libray' => true,
+            'load_libray' => false,
             'region_tag_title' => 'h2',
             'derivate' => [
                 'value' => 'select',
@@ -93,7 +93,7 @@ class MitModelsTitleSection extends FormatageModelsSection {
                 'builder-form' => true,
                 'info' => [
                     'title' => 'Texte information',
-                    'loader' => 'static'
+                    'loader' => 'dynamic'
                 ],
                 'fields' => [
                     'title' => [
