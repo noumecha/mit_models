@@ -22,7 +22,7 @@
         </div>
         {% endif %}
         {# content container #}
-        <div class="items"> {# please if error just add row beside items#}
+        <div class="row items"> {# please if error just add row beside items#}
         {% if content.teaser_container %}
     	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('item')) %}
     	        {{ item }} 
