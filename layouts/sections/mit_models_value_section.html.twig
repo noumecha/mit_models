@@ -14,9 +14,9 @@
             </h1>
             {% endif %}
             {% if content.value_section_description %}
-            <h5 {{ region_attributes.value_section_description.addClass(['section-desc','h5'])}}>
+            <{{ settings.region_tag_value_section_description }} {{ region_attributes.value_section_description.addClass(['section-desc'])}}>
                 {{ content.value_section_description }}
-            </h5>
+            </{{ settings.region_tag_value_section_description }}>
             {% endif %}
         </div>
         <div class="value-list">
