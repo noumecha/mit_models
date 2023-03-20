@@ -1,9 +1,7 @@
 {% if content %}
 <div {{ attributes.addClass(['mitor-card','row'])}}>
     <div class="mitor-card__img col-lg-6">
-        {#% if content.mc_image %#}
-        <div class="img-bloc row" {#{ region_attributes.mc_image.addClass('img-bloc') }#} >
-            {#{ content.mc_image }#}
+        <div class="img-bloc row" >
             {% if content.mc_image %}
                 {% for item in content.mc_image|array_elements(region_attributes.mc_image.addClass('')) %}
                     {{ item }}
@@ -18,7 +16,6 @@
                 </div>
             </div>
         </div>
-        {#% endif %#}
     </div>
     <div class="mitor-card__body col-lg-6 pt-3 pt-lg-0">
         {% if content.mc_title %}
