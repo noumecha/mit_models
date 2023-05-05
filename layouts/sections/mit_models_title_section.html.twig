@@ -22,20 +22,20 @@
         </div>
         {% endif %}
         {# content container #}
-        <div class="row items"> {# please if error just add row beside items#}
         {% if content.teaser_container %}
+        <div class="row items"> {# please if error just add row beside items#}        
     	    {% for item in content.teaser_container|array_elements(region_attributes.teaser_container.addClass('item')) %}
     	        {{ item }} 
-    	    {% endfor %}
-	    {% endif %}
+    	    {% endfor %}	    
         </div>
-        <div class="d-flex justify-content-center">
+        {% endif %}
         {% if content.title_section_btn %}
+        <div class="d-flex justify-content-center">        
     	    {% for item in content.title_section_btn|array_elements(region_attributes.title_section_btn.addClass('')) %}
     	        {{ item }} 
-    	    {% endfor %}
-	    {% endif %}
+    	    {% endfor %}	    
         </div>
+        {% endif %}
     <div>
 </section>
 {% endif %}

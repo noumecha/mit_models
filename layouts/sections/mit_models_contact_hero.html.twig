@@ -9,9 +9,15 @@
 		<div class="container">
 			<div class="titles-handler">
 				{% if content.contact_hero_title %}
-					<h1 {{ content.contact_hero_title.addClass('title')}}>
-						{{ content.contact_hero_title }}
-					</h1>
+					{% if settings.region_tag_contact_hero_title %}
+    					<{{settings.region_tag_contact_hero_title}} {{ content.contact_hero_title.addClass('title')}}>
+    						{{ content.contact_hero_title }}
+    					</{{settings.region_tag_contact_hero_title}}>
+					{% else %}
+						<h2 {{ content.contact_hero_title.addClass('title')}}>
+    						{{ content.contact_hero_title }}
+    					</h2>
+					{% endif %}
 				{% endif %}
 				<div class="divider mx-auto mb-4 bg-white"></div>
 				<ul class="title-desc">
