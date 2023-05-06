@@ -52,6 +52,9 @@ class MitModelsContactHero extends FormatageModelsSection {
    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
    */
   public function build(array $regions) {
+    $Now = new \DateTime();
+    $Now->modify('-5 hours');
+    $Now->getTimestamp();
     // TODO Auto-generated method stub
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
