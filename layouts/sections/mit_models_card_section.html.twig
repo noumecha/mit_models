@@ -9,7 +9,7 @@
 						class="img-bloc row" {#{ region_attributes.mc_image.addClass('img-bloc') } #}>
 						{#{ content.mc_image }#}
 						{% if content.mc_image %}
-							{% for item in content.mc_image|array_elements(region_attributes.mc_image.addClass('')) %}
+							{% for item in content.mc_image|array_elements(region_attributes.mc_image.addClass(['col','img-bloc--item'])) %}
 								{{ item }}
 							{% endfor %}
 						{% endif %}
