@@ -6,7 +6,7 @@
         {% set attributes = attributes.merge(content.value_section_bgimage|layout_bg_img) %}
 	{% endif %}
 <section {{ attributes.addClass(['mitor-core-value-section-handler','mitor-section-title--overflowable'])}}>
-    <div class="container">
+    <div {% if settings.config_section %} class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}" {% else %} class="container" {% endif %}>
         <div class="section-header">
             {% if content.value_section_title %}
             <h1 {{ region_attributes.value_section_title.addClass(['section-title'])}}>
