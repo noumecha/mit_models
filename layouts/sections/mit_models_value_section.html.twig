@@ -20,7 +20,7 @@
             {% endif %}
         </div>
         <div class="value-list">
-            <div class="row">
+            <div class="row {{settings.class_row}}">
                 {% if content.value_section_teaser %}
                     {% for item in content.value_section_teaser|array_elements(region_attributes.value_section_teaser.addClass('')) %}
                         {{ item }}

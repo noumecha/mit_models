@@ -2,8 +2,9 @@
 
 namespace Drupal\mit_models\Plugin\Layout\Sections;
 
-use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\formatage_models\FormatageModelsThemes;
+use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
@@ -56,6 +57,31 @@ class MitModelsValueSection extends FormatageModelsSection {
     $build = parent::build($regions);
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $form['class_row'] = [
+      '#type' => 'textfield',
+      '#title' => 'Class row',
+      '#default_value' => $this->configuration['class_row']
+    ];
+    return $form;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    // $this->configuration['layoutrestrictions'] =
+    // $form_state->getValue('layoutrestrictions');
+    $this->configuration['class_row'] = $form_state->getValue('class_row');
   }
   
   /**
