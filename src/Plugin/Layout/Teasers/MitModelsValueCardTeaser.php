@@ -2,9 +2,10 @@
 
 namespace Drupal\mit_models\Plugin\Layout\Teasers;
 
+use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
-use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * A custom teaser from mit_models module
@@ -54,44 +55,70 @@ class MitModelsValueCardTeaser extends FormatageModelsTeasers {
     FormatageModelsThemes::formatSettingValues($build);
     return $build;
   }
+  
   /**
-   * 
+   *
    * {@inheritdoc}
-   * 
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $form['limit_text_desc'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Limiter le texte de description'),
+      '#default_value' => $this->configuration['limit_text_desc'],
+      '#description' => 'si la valeur est vide le texte va etre afficher dans son enssemble, si non les balise sont supprimées et le nombre de charactere est affiché.'
+    ];
+    return $form;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->configuration['limit_text_desc'] = $form_state->getValue('limit_text_desc');
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
    */
   public function defaultConfiguration() {
-    return parent::defaultConfiguration() + [
-        'load_library' => true,
+    return [
+      'load_library' => false,
+      'limit_text_desc' => 200,
+      'info' => [
+        'builder-form' => true,
         'info' => [
-            'builder-form' => true,
-            'info' => [
-                'title' => 'Formulaire de contenu',
-                'loader' => 'static'
-            ],
-            'fields' => [
-                'value_card_icon' => [
-                    'text_html' => [
-                        'title' => 'Card Icon',
-                        'value' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          'title' => 'Formulaire de contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'value_card_icon' => [
+            'text_html' => [
+              'title' => 'Card Icon',
+              'value' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                     </svg>'
-                    ]
-                ],
-                'value_card_title' => [
-                    'text_html' => [
-                        'title' => 'Card Title',
-                        'value' => 'real user data'
-                    ]
-                ],
-                'value_card_description' => [
-                    'text_html' => [
-                        'title' => 'Card Description',
-                        'value' => 'Apparent was a dead black has ceased twinkle'
-                    ]
-                ]
             ]
+          ],
+          'value_card_title' => [
+            'text_html' => [
+              'title' => 'Card Title',
+              'value' => 'real user data'
+            ]
+          ],
+          'value_card_description' => [
+            'text_html' => [
+              'title' => 'Card Description',
+              'value' => 'Apparent was a dead black has ceased twinkle'
+            ]
+          ]
         ]
-    ];
+      ]
+    ] + parent::defaultConfiguration();
   }
   
 }

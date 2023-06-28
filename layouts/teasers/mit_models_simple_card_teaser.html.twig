@@ -58,12 +58,19 @@
         {% endif %}
         <div class="sc-title--bottom-line"></div>
         {% if content.card_description %}
-        <div {{ region_attributes.card_description.addClass('sc-desc')}} >
-            {{ content.card_description }}
-        </div>
-        {% endif %}
+            <div {{ region_attributes.card_description.addClass('sc-desc')}} >
+                {% if settings.limit_text_desc > 0 and content.card_description.layout_builder_add_block is empty %}
+					{% set d = content.card_description|render|striptags|trim %}
+					{{ d|length > settings.limit_text_desc ? d|slice(0,settings.limit_text_desc) ~ '...' : d}}
+				{% else %}
+					{{content.card_description}}
+				{% endif %}
+            </div>
+        {% endif %}        
         {% if content.card_link %}
-            {{ content.card_link }}
+            <div {{region_attributes.card_link}}>
+            	{{ content.card_link }}
+            </div>            
         {% endif %}
     </div>
 </div>
