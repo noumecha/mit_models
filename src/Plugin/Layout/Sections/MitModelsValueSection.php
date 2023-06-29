@@ -95,7 +95,7 @@ class MitModelsValueSection extends FormatageModelsSection {
       'region_tag_value_section_description' => 'h3',
       'region_css_value_section_title' => 'h1 text-white',
       'region_css_value_section_description' => 'h5 text-white',
-      'css' => 'bg-theme',
+      'css' => 'bg-theme mitor-section-title--overflowable',
       'cover_section' => [
         "active" => "cover-bg-theme",
         "model" => "cover-dark",
