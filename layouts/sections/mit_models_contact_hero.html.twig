@@ -9,6 +9,11 @@
 		<div class="container">
 			<div class="titles-handler">
 				{% if content.contact_hero_title %}
+<<<<<<< HEAD
+					<h1 {{ region_attributes.contact_hero_title.addClass('title')}}>
+						{{ content.contact_hero_title }}
+					</h1>
+=======
 					{% if settings.region_tag_contact_hero_title %}
     					<{{settings.region_tag_contact_hero_title}} {{ region_attributes.contact_hero_title.addClass('title')}}>
     						{{ content.contact_hero_title }}
@@ -18,6 +23,7 @@
     						{{ content.contact_hero_title }}
     					</h2>
 					{% endif %}
+>>>>>>> 1f82fd78ff6351fe0a94c85a172bdea88210176d
 				{% endif %}
 				<div class="divider mx-auto mb-4 bg-white"></div>
 				<ul class="title-desc">
