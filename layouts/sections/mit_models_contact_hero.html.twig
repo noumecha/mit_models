@@ -6,14 +6,9 @@
 		{% set attributes = attributes.merge(content.contact_hero_image|layout_bg_img) %}
 	{% endif %}
 	<section {{ attributes.addClass('mitor-contact-hero')}}>
-		<div class="container">
+		<div {% if settings.config_section %} class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}" {% else %} class="container" {% endif %}>
 			<div class="titles-handler">
 				{% if content.contact_hero_title %}
-<<<<<<< HEAD
-					<h1 {{ region_attributes.contact_hero_title.addClass('title')}}>
-						{{ content.contact_hero_title }}
-					</h1>
-=======
 					{% if settings.region_tag_contact_hero_title %}
     					<{{settings.region_tag_contact_hero_title}} {{ region_attributes.contact_hero_title.addClass('title')}}>
     						{{ content.contact_hero_title }}
@@ -23,12 +18,11 @@
     						{{ content.contact_hero_title }}
     					</h2>
 					{% endif %}
->>>>>>> 1f82fd78ff6351fe0a94c85a172bdea88210176d
 				{% endif %}
 				<div class="divider mx-auto mb-4 bg-white"></div>
 				<ul class="title-desc">
 					{% if content.contact_hero_proute %}
-						{% for item in content.contact_hero_proute|array_elements(region_attributes.teaser_container.addClass('parent-route')) %}
+						{% for item in content.contact_hero_proute|array_elements(region_attributes.contact_hero_proute.addClass('parent-route')) %}
 							<li class="parent-route">
 								{{ item }}
 							</li>
