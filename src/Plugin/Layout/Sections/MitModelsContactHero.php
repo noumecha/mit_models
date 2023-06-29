@@ -33,79 +33,82 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *   }
  * )
  */
-
 class MitModelsContactHero extends FormatageModelsSection {
-
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_contact_hero.png");
-    }
-    
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-     */
-    public function build(array $regions) {
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        return $build;
-    }
-    
-    /**
-     * 
-     * {@inheritdoc}
-     * 
-     */
-    function defaultConfiguration() {
-        return [
-            'load_libray' => true,
-            'derivate' => [
-                'value' => '',
-                'options' => [
-                    'mitor-contact-hero--vixcon' => 'vixcon',
-                ]
-            ],
-            'infos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Texte information',
-                    'loader' => 'static'
-                ],
-                'fields' => [
-                    'contact_hero_title' => [
-                        'text_html' => [
-                            'label' => 'Titre',
-                            'value' => 'contact'
-                        ]
-                    ],
-                    'contact_hero_image' => [
-                        'img_bg' => [
-                            'label' => 'Image',
-                            ]
-                    ],
-                    'contact_hero_proute' => [
-                        'text_html' => [
-                            'label' => 'Parent Route',
-                            'value' => 'home'
-                        ]
-                    ],
-                    'contact_hero_croute' => [
-                        'text_html' => [
-                            'label' => 'Parent Route',
-                            'value' => 'contact'
-                        ]
-                    ],
-                ]
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_contact_hero.png");
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+   */
+  public function build(array $regions) {
+    $Now = new \DateTime();
+    $Now->modify('-5 hours');
+    $Now->getTimestamp();
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  function defaultConfiguration() {
+    return [
+      'load_libray' => false,
+      'region_tag_contact_hero_title' => 'h2',
+      'derivate' => [
+        'value' => '',
+        'options' => [
+          'mitor-contact-hero--vixcon' => 'vixcon'
+        ]
+      ],
+      'infos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Texte information',
+          'loader' => 'dynamic'
+        ],
+        'fields' => [
+          'contact_hero_title' => [
+            'text_html' => [
+              'label' => 'Titre',
+              'value' => 'contact'
             ]
-        ] + parent::defaultConfiguration();
-    }
-
+          ],
+          'contact_hero_image' => [
+            'img_bg' => [
+              'label' => 'Image'
+            ]
+          ],
+          'contact_hero_proute' => [
+            'text_html' => [
+              'label' => 'Parent Route',
+              'value' => 'home'
+            ]
+          ],
+          'contact_hero_croute' => [
+            'text_html' => [
+              'label' => 'Parent Route',
+              'value' => 'contact'
+            ]
+          ]
+        ]
+      ]
+    ] + parent::defaultConfiguration();
+  }
+  
 }

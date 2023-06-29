@@ -1,49 +1,57 @@
 {% if content %}
-<div {{ attributes.addClass(['mitor-card','row'])}}>
-    <div class="mitor-card__img col-lg-6">
-        <div class="img-bloc row" >
-            {% if content.mc_image %}
-                {% for item in content.mc_image|array_elements(region_attributes.mc_image.addClass('')) %}
-                    {{ item }}
-                {% endfor %}
-            {% endif %}
-            <div class="mitor-play-btn">
-                <div class="mtb-play">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                        <path
-                              d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mitor-card__body col-lg-6 pt-3 pt-lg-0">
-        {% if content.mc_title %}
-        <h1 {{ region_attributes.mc_title.addClass(['mc-title'])}} >
-            {{ content.mc_title }}
-        </h1>
-        {% endif %}
-        {% if content.mc_description %}
-        <div {{ region_attributes.mc_description.addClass('mc-description')}} >
-            {{ content.mc_description }}
-        </div>
-        {% endif %}
-        {% if content.mc_btn %}
-            {% for item in content.mc_btn|array_elements(region_attributes.mc_btn.addClass('')) %}
-                {{ item }}
-            {% endfor %}
-        {% endif %}
-        {#% if content.mc_btn %}
-            {{ content.mc_btn }}
-        {% endif %#}
-        <div class="row">
-            {% if content.listable_items %}
-    	        {% for item in content.listable_items|array_elements(region_attributes.listable_items.addClass('')) %}
-    	            {{ item }}
-                    {#{ dump() }#}
-    	        {% endfor %}
-	        {% endif %}
-        </div>
-    </div>
-</div>
+	<div {{ attributes.addClass(['mitor-card'])}}>
+		<div class="container">
+			<div class="row">
+				<div
+					class="mitor-card__img col-lg-6">
+					{#% if content.mc_image %#}
+					<div
+						class="img-bloc row" {#{ region_attributes.mc_image.addClass('img-bloc') } #}>
+						{#{ content.mc_image }#}
+						{% if content.mc_image %}
+							{% for item in content.mc_image|array_elements(region_attributes.mc_image.addClass(['col','img-bloc--item'])) %}
+								{{ item }}
+							{% endfor %}
+						{% endif %}
+						<div class="mitor-play-btn">
+							<div class="mtb-play">
+								<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512">
+									<path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+					{#% endif %#}
+				</div>
+				<div class="mitor-card__body col-lg-6 pt-3 pt-lg-0">
+					{% if content.mc_title %}
+						<h1 {{ region_attributes.mc_title.addClass('mc-title h1')}}>
+							{{ content.mc_title }}
+						</h1>
+					{% endif %}
+					{% if content.mc_description %}
+						<div {{ region_attributes.mc_description.addClass('mc-description')}}>
+							{{ content.mc_description }}
+						</div>
+					{% endif %}
+					{% if content.mc_btn %}
+						{% for item in content.mc_btn|array_elements(region_attributes.mc_btn.addClass('')) %}
+							{{ item }}
+						{% endfor %}
+					{% endif %}
+					{#% if content.mc_btn %}
+					                    {{ content.mc_btn }}
+					                {% endif %#}
+					<div class="row">
+						{% if content.listable_items %}
+							{% for item in content.listable_items|array_elements(region_attributes.listable_items.addClass('')) %}
+								{{ item }}
+								{#{ dump() }#}
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endif %}

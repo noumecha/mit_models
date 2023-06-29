@@ -5,6 +5,7 @@ namespace Drupal\mit_models\Plugin\Layout\Teasers;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\FormatageModelsThemes;
 use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * A custom teaser from mit_models module
@@ -56,141 +57,167 @@ use Drupal\formatage_models\Plugin\Layout\Teasers\FormatageModelsTeasers;
  */
 class MitModelsSimpleCardTeaser extends FormatageModelsTeasers {
   
-    /**
-    *
-    * {@inheritdoc}
-    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-    */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/teasers/mit_models_simple_card.png");
-    }
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/teasers/mit_models_simple_card.png");
+  }
   
-    /**
-    *
-    * {@inheritdoc}
-    * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-    */
-    public function build(array $regions) {
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        return $build;
-    }
-    /**
-    * 
-    * {@inheritdoc}
-    * 
-    */
-    function defaultConfiguration() {
-        return [
-            'load_library' => true,
-            'region_tag_card_user_title' => 'h5',
-            "derivate" => [
-                'value' => '',
-                'options' => [
-                    'simple-card--user-info' => 'user-info',
-                    'simple-card--dateshow' => 'dateshow',
-                    'simple-card--icon' => 'icon',
-                    'simple-card--icon-bg' => 'icon-bg',
-                    'simple-card--icon-left' => 'icon-left',
-                    'simple-card--icon-no-effect' => 'icon-no-effect',
-                    'simple-card--user-info-img-absolute' => 'icon-user-info-img-absolute',
-                    'simple-card--icon-left-black' => 'icon-left-black',
-                    'simple-card--icon-left-no-bg' => 'icon-left-no-bg',
-                ]
-            ],
-            'infos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Formulaire de contenu',
-                    'loader' => 'static'
-                ],
-                'fields' => [
-                    'card_title' => [
-                        'text_html' => [
-                            'label' => 'Titre card',
-                            'value' => 'Market Researchc'
-                        ]
-                    ],
-                    'card_description' => [
-                        'text_html' => [
-                            'label' => 'card description',
-                            'value' => 'Apparently we had reached a great height in the atmosphere for the
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+   */
+  public function build(array $regions) {
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $form['limit_text_desc'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Limiter le texte de description'),
+      '#default_value' => $this->configuration['limit_text_desc'],
+      '#description' => 'si la valeur est vide le texte va etre afficher dans son enssemble, si non les balise sont supprimées et le nombre de charactere est affiché.'
+    ];
+    return $form;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    $this->configuration['limit_text_desc'] = $form_state->getValue('limit_text_desc');
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  function defaultConfiguration() {
+    return [
+      'load_library' => true,
+      'limit_text_desc' => 200,
+      'region_tag_card_user_title' => 'h5',
+      "derivate" => [
+        'value' => '',
+        'options' => [
+          'simple-card--user-info' => 'user-info',
+          'simple-card--dateshow' => 'dateshow',
+          'simple-card--icon' => 'icon',
+          'simple-card--icon-bg' => 'icon-bg',
+          'simple-card--icon-left' => 'icon-left',
+          'simple-card--icon-no-effect' => 'icon-no-effect',
+          'simple-card--user-info-img-absolute' => 'icon-user-info-img-absolute',
+          'simple-card--icon-left-black' => 'icon-left-black',
+          'simple-card--icon-left-no-bg' => 'icon-left-no-bg'
+        ]
+      ],
+      'infos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Formulaire de contenu',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'card_title' => [
+            'text_html' => [
+              'label' => 'Titre card',
+              'value' => 'Market Researchc'
+            ]
+          ],
+          'card_description' => [
+            'text_html' => [
+              'label' => 'card description',
+              'value' => 'Apparently we had reached a great height in the atmosphere for the
                             sky was a dead black had ceased to twinkle.'
-                        ]
-                    ],
-                    'card_icon' => [
-                        'text_html' => [
-                            'label' => 'Card icon',
-                            'value' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            ]
+          ],
+          'card_icon' => [
+            'text_html' => [
+              'label' => 'Card icon',
+              'value' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                             <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                             <path
                                                 d="M255.1 192H.1398C2.741 117.9 41.34 52.95 98.98 14.1C112.2 5.175 129.8 9.784 138.9 22.92L255.1 192zM384 160C384 124.7 412.7 96 448 96H480C497.7 96 512 110.3 512 128C512 145.7 497.7 160 480 160H448V224C448 249.2 442.2 274.2 430.9 297.5C419.7 320.8 403.2 341.9 382.4 359.8C361.6 377.6 336.9 391.7 309.7 401.4C282.5 411 253.4 416 223.1 416C194.6 416 165.5 411 138.3 401.4C111.1 391.7 86.41 377.6 65.61 359.8C44.81 341.9 28.31 320.8 17.05 297.5C5.794 274.2 0 249.2 0 224H384L384 160zM31.1 464C31.1 437.5 53.49 416 79.1 416C106.5 416 127.1 437.5 127.1 464C127.1 490.5 106.5 512 79.1 512C53.49 512 31.1 490.5 31.1 464zM416 464C416 490.5 394.5 512 368 512C341.5 512 320 490.5 320 464C320 437.5 341.5 416 368 416C394.5 416 416 437.5 416 464z" />
                                         </svg>'
-                        ]
-                    ],
-                    'card_image' => [
-                        'text_html' => [
-                            'label' => 'card Image',
-                            'value' => '<a href="#"><img
+            ]
+          ],
+          'card_image' => [
+            'text_html' => [
+              'label' => 'card Image',
+              'value' => '<a href="#"><img
                                         src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-2/research-2.jpg"
                                         alt=""></a>'
-                        ]
-                    ],
-                    'card_link' => [
-                        'url' => [
-                            'label' =>  'Link',
-                            'value' =>  [
-                                'text' => 'learn-more',
-                                'link' => '#',
-                                'class' => 'sc-link'
-                            ]
-                        ]
-                    ],
-                    'card_user_image' => [
-                        'text_html' => [
-                            'label' => 'Image Utilisateur',
-                            'value' => '<a href="#"><img
+            ]
+          ],
+          'card_link' => [
+            'url' => [
+              'label' => 'Link',
+              'value' => [
+                'text' => 'learn-more',
+                'link' => '#',
+                'class' => 'sc-link'
+              ]
+            ]
+          ],
+          'card_user_image' => [
+            'text_html' => [
+              'label' => 'Image Utilisateur',
+              'value' => '<a href="#"><img
                                             src="http://slidesigma.com/themes/html/mitor/assets/img/homepage-2/research-2.jpg"
                                             alt="">
                                         </a>'
-                        ]
-                    ],
-                    'card_user_title' => [
-                        'text_html' => [
-                            'label' => 'Title Utilisateur',
-                            'value' => 'sanjana parvin'
-                        ]
-                    ],
-                    'card_date' => [
-                        'text_html' => [
-                            'label' => 'Date',
-                            'value' => '29'
-                        ]
-                    ],
-                    'card_month' => [
-                        'text_html' => [
-                            'label' => 'Mois',
-                            'value' => 'June'
-                        ]
-                    ],
-                    'card_user_role' => [
-                        'text_html' => [
-                            'label' => 'Role Utilisateur',
-                            'value' => 'admin'
-                        ]
-                    ],
-                    'card_user_date' => [
-                        'text_html' => [
-                            'label' => 'Date',
-                            'value' => '25 january 2022'
-                        ]
-                    ]
-                ]
             ]
-        ] + parent::defaultConfiguration();
-    }
+          ],
+          'card_user_title' => [
+            'text_html' => [
+              'label' => 'Title Utilisateur',
+              'value' => 'sanjana parvin'
+            ]
+          ],
+          'card_date' => [
+            'text_html' => [
+              'label' => 'Date',
+              'value' => '29'
+            ]
+          ],
+          'card_month' => [
+            'text_html' => [
+              'label' => 'Mois',
+              'value' => 'June'
+            ]
+          ],
+          'card_user_role' => [
+            'text_html' => [
+              'label' => 'Role Utilisateur',
+              'value' => 'admin'
+            ]
+          ],
+          'card_user_date' => [
+            'text_html' => [
+              'label' => 'Date',
+              'value' => '25 january 2022'
+            ]
+          ]
+        ]
+      ]
+    ] + parent::defaultConfiguration();
+  }
   
 }

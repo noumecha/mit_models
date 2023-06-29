@@ -2,8 +2,9 @@
 
 namespace Drupal\mit_models\Plugin\Layout\Sections;
 
-use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\formatage_models\FormatageModelsThemes;
+use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
@@ -33,72 +34,102 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *   }
  * )
  */
-
 class MitModelsValueSection extends FormatageModelsSection {
-
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_value_section.png");
-    }
-
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-     */
-    public function build(array $regions) {
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        return $build;
-    }
-
-    /**
-     *
-     * {@inheritdoc}
-     *
-     */
-    function defaultConfiguration() {
-        return [
-            'load_libray' => true,
-            'region_tag_value_section_description' => 'h3',
-            'region_css_value_section_title' => 'h1 text-white',
-            'region_css_value_section_description' => 'h5 text-white',
-            'infos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Texte information',
-                    'loader' => 'static'
-                ],
-                'fields' => [
-                    'value_section_title' => [
-                        'text_html' => [
-                            'label' => 'Titre',
-                            'value' => 'our core values'
-                        ]
-                    ],
-                    'value_section_description' => [
-                        'text_html' => [
-                            'label' => 'Description',
-                            'value' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti vero quaerat, eum voluptas
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_value_section.png");
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+   */
+  public function build(array $regions) {
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildConfigurationForm($form, $form_state);
+    $form['class_row'] = [
+      '#type' => 'textfield',
+      '#title' => 'Class row',
+      '#default_value' => $this->configuration['class_row']
+    ];
+    return $form;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
+    // $this->configuration['layoutrestrictions'] =
+    // $form_state->getValue('layoutrestrictions');
+    $this->configuration['class_row'] = $form_state->getValue('class_row');
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  function defaultConfiguration() {
+    return [
+      'load_libray' => true,
+      'region_tag_value_section_description' => 'h3',
+      'region_css_value_section_title' => 'h1 text-white',
+      'region_css_value_section_description' => 'h5 text-white',
+      'css' => 'bg-theme',
+      'cover_section' => [
+        "active" => "cover-bg-theme",
+        "model" => "cover-dark",
+        "opacity" => "opacity-before-055"
+      ],
+      'infos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Texte information',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'value_section_title' => [
+            'text_html' => [
+              'label' => 'Titre',
+              'value' => 'our core values'
+            ]
+          ],
+          'value_section_description' => [
+            'text_html' => [
+              'label' => 'Description',
+              'value' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti vero quaerat, eum voluptas
                             odio asperiores unde molestiae dolorem enim, sunt facere soluta!'
-                        ]
-                    ],
-                    'value_section_bgimage' => [
-                        'img_bg' => [
-                            'label' => 'Bg Image'
-                        ]
-                    ],
-                    'value_section_teaser' => [
-                        'text_html' => [
-                            'label' => 'Type Deux',
-                            'value' => '<div class="col-lg-3">
+            ]
+          ],
+          'value_section_bgimage' => [
+            'img_bg' => [
+              'label' => 'Bg Image'
+            ]
+          ],
+          'value_section_teaser' => [
+            'text_html' => [
+              'label' => 'Type Deux',
+              'value' => '<div class="col-lg-3">
                                             <div class="value-card">
                                                 <div class="value-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -147,11 +178,11 @@ class MitModelsValueSection extends FormatageModelsSection {
                                                 <div class="value-desc">Apparent was a dead black has ceased twinkle</div>
                                             </div>
                                         </div>'
-                        ]
-                    ]
-                ]
             ]
-        ] + parent::defaultConfiguration();
-    }
-
+          ]
+        ]
+      ]
+    ] + parent::defaultConfiguration();
+  }
+  
 }

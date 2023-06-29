@@ -32,104 +32,97 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *     },
  *     "teaser_container" = {
  *      "label" = @Translation("teaser_container"),
- *     },
- *     "type_one" = {
- *      "label" = @Translation("type_one"),
- *     },
- *     "type_two" = {
- *      "label" = @Translation("type_two"),
- *     },
+ *     }
  *   }
  * )
  */
-
 class MitModelsTitleSection extends FormatageModelsSection {
-
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_title.png");
-    }
-    
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-     */
-    public function build(array $regions) {
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        return $build;
-    }
-    
-    /**
-     * 
-     * {@inheritdoc}
-     * 
-     */
-    function defaultConfiguration() {
-        return [
-            'load_libray' => false,
-            'region_tag_title' => 'h2',
-            'derivate' => [
-                'value' => 'select',
-                'options' => [
-                    'mitor-section-title--bg' => 'before-bg',
-                    'bg-light' => 'bg-light',
-                    'mitor-section-title--bottom-black' => 'bottom-black',
-                    'mitor-section-title--color-middle' => 'color-middle',
-                    'mitor-section-title--item-midle-border' => 'item-midle-border',
-                    'mitor-section-title--text-left' => 'text-left',
-                ]
-            ],
-            'region_tag_title' => 'h1',
-            'infos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Texte information',
-                    'loader' => 'dynamic'
-                ],
-                'fields' => [
-                    'title' => [
-                        'text_html' => [
-                            'label' => 'Titre',
-                            'value' => ' Best Digital Agency Since 1998 Over the internet '
-                        ]
-                    ],
-                    'type_one' => [
-                        'text_html' => [
-                            'label' => 'Type Un',
-                            'value' => 'Monthly'
-                        ]
-                    ],
-                    'type_two' => [
-                        'text_html' => [
-                            'label' => 'Type Deux',
-                            'value' => 'Yearly'
-                        ]
-                    ],
-                    'description' => [
-                        'text_html' => [
-                            'label' => ' Descritpion ',
-                            'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
-                        ]
-                    ],
-                    'slider_container' => [
-                        'text_html' => [
-                            'label' => 'Slider Container',
-                            'value' => '',
-                        ]
-                    ],
-                    'teaser_container' => [
-                        'text_html' => [
-                            'label' => 'Section card Container',
-                            'value' => '<div class="mitor-card mitor-card--triangle-right  mitor-card--reverse  row">
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', drupal_get_path('module', 'mit_models') . "/icones/sections/mit_models_title.png");
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+   */
+  public function build(array $regions) {
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    return $build;
+  }
+  
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  function defaultConfiguration() {
+    return [
+      'load_libray' => false,
+      'region_tag_title' => 'h2',
+      'derivate' => [
+        'value' => 'select',
+        'options' => [
+          'mitor-section-title--bg' => 'before-bg',
+          'bg-light' => 'bg-light',
+          'mitor-section-title--bottom-black' => 'bottom-black',
+          'mitor-section-title--color-middle' => 'color-middle',
+          'mitor-section-title--item-midle-border' => 'item-midle-border',
+          'mitor-section-title--text-left' => 'text-left'
+        ]
+      ],
+      'region_tag_title' => 'h1',
+      'infos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Texte information',
+          'loader' => 'dynamic'
+        ],
+        'fields' => [
+          'title' => [
+            'text_html' => [
+              'label' => 'Titre',
+              'value' => ' Best Digital Agency Since 1998 Over the internet '
+            ]
+          ],
+          'type_one' => [
+            'text_html' => [
+              'label' => 'Type Un',
+              'value' => 'Monthly'
+            ]
+          ],
+          'type_two' => [
+            'text_html' => [
+              'label' => 'Type Deux',
+              'value' => 'Yearly'
+            ]
+          ],
+          'description' => [
+            'text_html' => [
+              'label' => ' Descritpion ',
+              'value' => ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus provident amet, nam doloremque error sequi quos fugiat unde eligendi aut fugit quibusdam adipisci ipsa magni praesentium accusamus quas laboriosam? At.  '
+            ]
+          ],
+          'slider_container' => [
+            'text_html' => [
+              'label' => 'Slider Container',
+              'value' => ''
+            ]
+          ],
+          'teaser_container' => [
+            'text_html' => [
+              'label' => 'Section card Container',
+              'value' => '<div class="mitor-card mitor-card--triangle-right  mitor-card--reverse  row">
                                             <div class="mitor-card__img col-lg-6">
                                                 <div class="img-bloc">
                                                     <a href="#">
@@ -178,21 +171,21 @@ class MitModelsTitleSection extends FormatageModelsSection {
                                                 <a href="#" class="mitor-btn  ">Contact us</a>
                                             </div>
                                         </div>'
-                        ]
-                    ],
-                    'title_section_btn' => [
-                        'url' => [
-                            'label' => 'LIEN',
-                            'value' => [
-                                'text' => 'Contact us',
-                                'link' => '#',
-                                'class' => 'mitor-btn'
-                            ]
-                        ]
-                    ]
-                ]
             ]
-        ] + parent::defaultConfiguration();
-    }
-
+          ],
+          'title_section_btn' => [
+            'url' => [
+              'label' => 'LIEN',
+              'value' => [
+                'text' => 'Contact us',
+                'link' => '#',
+                'class' => 'mitor-btn'
+              ]
+            ]
+          ]
+        ]
+      ]
+    ] + parent::defaultConfiguration();
+  }
+  
 }

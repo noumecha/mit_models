@@ -27,12 +27,7 @@ mit_models_mitor_hero_section:
   css:
     theme:
       css/mit_models_mitor_hero_section.css : {}
-mit_models_card_section:
-  js:
-    js/mit_models_card_section.js: {}
-  css:
-    theme:
-      css/mit_models_card_section.css: {}
+
 mit_models_contact_hero:
   js:
     js/mit_models_contact_hero.js: {}
